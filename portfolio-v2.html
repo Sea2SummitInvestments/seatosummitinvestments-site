@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio | Sea to Summit Investments</title>
+  <meta name="description" content="Portfolio snapshot — a living record of investment experience across residential, commercial, and multifamily real estate." />
+  <link rel="icon" href="assets/logo.jpg" />
+  <link rel="stylesheet" href="styles-v2.css" />
+
+  <style>
+
+    .page-title { padding: 56px 0 28px; } /* more breathing room */
+    .subtle { color: var(--muted); }
+
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .pillrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+
+    /* Asset cards */
+    .asset-grid{ margin-top:14px; }
+    .asset-card img{
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      margin-bottom: 12px;
+      background: rgba(255,255,255,0.03);
+    }
+.page-hero-grid{
+  display:grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.page-hero-copy{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.04);
+  box-shadow: var(--shadow);
+  padding: 34px; /* was effectively tighter before */
+}
+
+.page-hero-copy h1{ margin-top: 16px; }
+.page-hero-copy p{ margin-top: 14px; }
+
+.page-hero-media{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow:hidden;
+  background: rgba(255,255,255,0.03);
+  box-shadow: var(--shadow);
+  display:flex;
+  flex-direction:column;
+}
+.page-hero-media img{
+  width:100%;
+  height:100%;
+  min-height: 360px;
+  object-fit: cover;
+  display:block;
+}
+
+.media-caption{
+  padding: 14px 16px;
+  text-align: center;         /* center it */
+  font-weight: 700;           /* bold */
+  color: var(--accent);       /* teal brand color */
+  border-top: 1px solid var(--line);
+  background: rgba(0,0,0,0.18);
+}
+
+.disclaimer{
+  font-size: 12px;
+  font-style: italic;
+  opacity: 0.75;
+  margin-top: 14px;
+}
+
+@media (max-width: 960px){
+  .page-hero-grid{ grid-template-columns: 1fr; }
+  .page-hero-copy{ padding: 26px; }
+  .page-hero-media img{ min-height: 220px; }
+}
+    .asset-meta{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin: 8px 0 10px;
+    }
+    .asset-tag{
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+    }
+    .asset-loc{ font-size: 13px; color: var(--muted); margin-top: -2px; }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="row">
+        <a class="brand" href="index-v2.html" aria-label="Sea to Summit Investments home">
+          <img src="assets/logo.jpg" alt="Sea to Summit Investments" class="brand-logo">
+        </a>
+
+        <div class="navlinks" aria-label="Primary">
+          <a href="index-v2.html">Home</a>
+          <a href="approach-v2.html">Our Approach</a>
+          <a href="portfolio-v2.html">Portfolio</a>
+          <a href="market-v2.html">Market</a>
+          <a href="insights-v2.html">Insights</a>
+          <a href="about-v2.html">About</a>
+          <a href="contact-v2.html">Contact</a>
+        </div>
+
+        <div class="ctas">
+          <a class="btn primary" href="contact-v2.html">Join Investor List</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- PORTFOLIO: PHOTO BAND (wraps TITLE + SUMMARY in one continuous background) -->
+<section
+  class="section bg-photo"
+  style="--photo-url: url('assets/Portfolio-bg-photo.jpg'); --photo-pos: center;"
+>
+  <div class="container">
+
+    <!-- TITLE (content block 1) -->
+    <div class="page-hero-grid">
+      <!-- LEFT: COPY -->
+      <div class="page-hero-copy">
+        <div class="kicker">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+          Residential • Commercial • Multifamily
+        </div>
+
+        <h1>Portfolio Snapshot</h1>
+
+        <p class="subtle">
+          Investment and management experience dating back to 2009, with five active cash-flowing assets and two fully realized investments
+          across residential, commercial, and multifamily real estate.
+        </p>
+
+        <p class="subtle disclaimer">
+          *This page is shared for informational purposes only and is not an offer to sell securities.
+        </p>
+
+        <div class="pillrow">
+          <a href="#active" class="tag">Active: 5 assets</a>
+          <a href="#realized" class="tag">Fully Realized: 2 assets</a>
+        </div>
+
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="btn" href="contact-v2.html">Ask a Question</a>
+          <a class="btn primary" href="contact-v2.html">Join Investor List</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: IMAGE -->
+      <div class="page-hero-media">
+        <img src="assets/idyllwild CA.png" alt="Idyllwild cabin (short-term rental)">
+        <div class="media-caption">GP owned • Short-term rental • Idyllwild, CA</div>
+      </div>
+    </div>
+
+    <!-- Subtle divider inside the same background band -->
+    <div class="section-divider"></div>
+
+    <!-- SUMMARY (content block 2) -->
+    <h2>Summary</h2>
+
+    <div class="grid3" style="margin-top:14px;">
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M4 12h16M4 7h16M4 17h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Residential — GP Ownership</h3>
+        <p>• Cabin (Short-Term Rental) — Idyllwild, CA</p>
+        <p>• Mid-Rise Condo — Little Italy, San Diego, CA</p>
+        <p>• Single-Family Home — Arvada, CO</p>
+        <p class="subtle">Owned &amp; managed by Sea to Summit Investments.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M3 21h18M6 21V7l6-4 6 4v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Commercial — LP Investment</h3>
+        <p>• Fully Realized — South Bend, IN</p>
+        <p>• Active, Cash-Flowing — Eastlake, OH</p>
+        <p class="subtle">Investments with cash distributions.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M4 10h16M6 10V6h12v4M6 10v10h12V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Multifamily — LP Investment</h3>
+        <p>• Park Crest Townhomes — Vancouver, WA</p>
+        <p>• West Main at the Park — Hillsboro, OR</p>
+        <p class="subtle">Investments with cash distributions.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="section" id="active">
+  <div class="container">
+    <h2 class="section-title">Active Investments</h2>
+
+      <p class="subtle">A high-level snapshot of currently held, cash-flowing assets.</p>
+
+      <div class="grid3 asset-grid">
+        <!-- Active Commercial -->
+        <div class="card asset-card">
+          <img src="assets/Eastlake OH.jpg" alt="Commercial investment property (placeholder)">
+          <h3>Curtis Blvd - Commercial Asset</h3>
+          <div class="asset-loc">Eastlake, OH</div>
+          <div class="asset-meta">
+            <span class="asset-tag">Active</span>
+            <span class="asset-tag">LP Investment</span>
+            <span class="asset-tag">Cash-Flowing</span>
+          </div>
+          <p class="subtle">Commercial Investment with ongoing distributions. Acquired in Nov. 2015.</p>
+        </div>
+
+        <!-- Active Multifamily 1 -->
+        <div class="card asset-card">
+          <img src="assets/Park Crest-WA.jpg" alt="Multifamily investment property (placeholder)">
+          <h3>Park Crest Townhomes</h3>
+          <div class="asset-loc">Vancouver, WA</div>
+          <div class="asset-meta">
+            <span class="asset-tag">Active</span>
+            <span class="asset-tag">LP Investment</span>
+            <span class="asset-tag">Multifamily</span>
+          </div>
+          <p class="subtle">Cash-flowing multifamily investment with ongoing distributions. Acquired Jul. 2021.</p>
+        </div>
+
+        <!-- Active Multifamily 2 -->
+        <div class="card asset-card">
+          <img src="assets/West Main-OR.jpg" alt="Multifamily investment property (placeholder)">
+          <h3>West Main at the Park</h3>
+          <div class="asset-loc">Hillsboro, OR</div>
+          <div class="asset-meta">
+            <span class="asset-tag">Active</span>
+            <span class="asset-tag">LP Investment</span>
+            <span class="asset-tag">Multifamily</span>
+          </div>
+          <p class="subtle">Cash-flowing multifamily investment with ongoing distributions. Acquired Dec. 2024.</p>
+        </div>
+
+        <!-- Active Residential 2 -->
+        <div class="card asset-card">
+          <img src="assets/portfolio-placeholder.jpg" alt="Mid-rise condo (placeholder)">
+          <h3>Mid-Rise Condo</h3>
+          <div class="asset-loc">Little Italy, San Diego, CA</div>
+          <div class="asset-meta">
+            <span class="asset-tag">Active</span>
+            <span class="asset-tag">GP Ownership</span>
+            <span class="asset-tag">Residential</span>
+          </div>
+          <p class="subtle">Sea to Summit owned and managed residential investment. Acquired Jul. 2009.</p>
+        </div>
+
+        <!-- Active Residential 3 -->
+        <div class="card asset-card">
+          <img src="assets/Arvada CO.jpg" alt="Single-family home (placeholder)">
+          <h3>Single-Family Home</h3>
+          <div class="asset-loc">Arvada, CO</div>
+          <div class="asset-meta">
+            <span class="asset-tag">Active</span>
+            <span class="asset-tag">GP Ownership</span>
+            <span class="asset-tag">Residential</span>
+          </div>
+          <p class="subtle">Sea to Summit owned and managed residential investment. Acquired Sept 2017.</p>
+        </div>
+      </div>
+    </div>
+<section class="section" id="realized">
+  <div class="container">
+    <h2 class="section-title">Fully Realized Investments</h2>
+      <p class="subtle">Completed investment lifecycles (entered and exited).</p>
+
+      <div class="grid3 two-up asset-grid">
+        <!-- Realized Commercial -->
+        <div class="card asset-card">
+          <img src="assets/South Bend IN.jpg" alt="Commercial investment property (placeholder)">
+          <h3>Niles Colfax - Commercial Asset</h3>
+          <div class="asset-loc">South Bend, IN</div>
+          <div class="asset-meta">
+            <span class="asset-tag">Fully Realized</span>
+            <span class="asset-tag">LP Investment</span>
+            <span class="asset-tag">Commercial</span>
+          </div>
+          <p class="subtle">Acquired in Feb. 2015 and sold in Oct. 2024. Fully realized commercial investment.</p>
+        </div>
+
+        <!-- Realized STR -->
+        <div class="card asset-card">
+          <img src="assets/idyllwild CA2.jpg" alt="Idyllic Idyllwild - Short-term rental property (placeholder)">
+          <h3>Idyllic Idyllwild Cabin - Short-Term Rental</h3>
+          <div class="asset-loc">Idyllwild, CA</div>
+          <div class="asset-meta">
+            <span class="asset-tag">Fully Realized</span>
+            <span class="asset-tag">GP Ownership</span>
+            <span class="asset-tag">Residential</span>
+          </div>
+          <p class="subtle">Acquired in Dec. 2015 and sold in Jul. 2020. Fully realized short-term rental investment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>© <span id="year"></span> Sea to Summit Investments LLC. All rights reserved.</div>
+        <div>Stewardship • Transparency • Long-Term Alignment</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

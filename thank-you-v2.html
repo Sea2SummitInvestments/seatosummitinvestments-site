@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thank You | Sea to Summit Investments</title>
+  <meta name="description" content="Thank you for contacting Sea to Summit Investments." />
+  <link rel="icon" href="assets/logo.jpg" />
+  <link rel="stylesheet" href="styles-v2.css" />
+
+  <style>
+    .page-title { padding: 48px 0 10px; }
+    .subtle { color: var(--muted); }
+
+    .center-wrap{
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .icon-wrap{
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin: 0 auto 16px;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .pillrow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:14px;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="row">
+        <a class="brand" href="index-v2.html" aria-label="Sea to Summit Investments home">
+          <img src="assets/logo.jpg" alt="Sea to Summit Investments" class="brand-logo">
+        </a>
+
+        <div class="navlinks" aria-label="Primary">
+          <a href="index-v2.html">Home</a>
+          <a href="approach-v2.html">Our Approach</a>
+          <a href="portfolio-v2.html">Portfolio</a>
+          <a href="market-v2.html">Market</a>
+          <a href="insights-v2.html">Insights</a>
+          <a href="about-v2.html">About</a>
+          <a href="contact-v2.html">Contact</a>
+        </div>
+
+        <div class="ctas">
+          <a class="btn primary" href="contact-v2.html">Join Investor List</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <section class="page-title">
+    <div class="container">
+      <div class="hero-card">
+        <div class="center-wrap">
+          <div class="icon-wrap" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+              <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <div class="kicker">
+            Message Received
+          </div>
+
+          <h1>Thank You</h1>
+
+          <p class="subtle">
+            Your message has been received. We appreciate you reaching out and will follow up shortly.
+            We typically respond within one business day.
+          </p>
+
+          <div class="pillrow">
+            <span class="tag">Inquiry received</span>
+            <span class="tag">Reviewing details</span>
+            <span class="tag">Follow-up soon</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn" href="portfolio-v2.html">View Portfolio Snapshot</a>
+            <a class="btn primary" href="approach-v2.html">Review Our Approach</a>
+          </div>
+
+          <p class="subtle" style="margin-top:18px;">
+            If you need immediate assistance, you can also email us directly at
+            <a href="mailto:Luke@S2SInvest.com">Luke@S2SInvest.com</a>.
+          </p>
+
+          <div class="callout-lite" style="margin-top:16px;">
+            <strong style="color:var(--text);">Note:</strong>
+            <span class="subtle">This confirmation page is informational only and does not constitute an offer to sell securities.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>© <span id="year"></span> Sea to Summit Investments LLC. All rights reserved.</div>
+        <div>Stewardship • Transparency • Long-Term Alignment</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

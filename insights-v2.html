@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Insights | Sea to Summit Investments</title>
+  <meta name="description" content="Articles, guides, and reference posts from Sea to Summit Investments." />
+  <link rel="icon" href="assets/logo.jpg" />
+  <link rel="stylesheet" href="styles-v2.css" />
+
+  <style>
+    .page-title { padding: 28px 0 10px; }
+    .subtle { color: var(--muted); }
+
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .pillrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+
+    .media{
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      margin-bottom: 12px;
+    }
+
+    .item-meta{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      margin: 8px 0 10px;
+    }
+    .item-tag{
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+    }
+
+    .callout-lite{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-top: 14px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="row">
+        <a class="brand" href="index-v2.html" aria-label="Sea to Summit Investments home">
+          <img src="assets/logo.jpg" alt="Sea to Summit Investments" class="brand-logo">
+        </a>
+
+        <div class="navlinks" aria-label="Primary">
+          <a href="index-v2.html">Home</a>
+          <a href="approach-v2.html">Our Approach</a>
+          <a href="portfolio-v2.html">Portfolio</a>
+          <a href="market-v2.html">Market</a>
+          <a href="insights-v2.html">Insights</a>
+          <a href="about-v2.html">About</a>
+          <a href="contact-v2.html">Contact</a>
+        </div>
+
+        <div class="ctas">
+          <a class="btn primary" href="contact-v2.html">Join Investor List</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- HERO + RESOURCES WRAPPED IN ONE BACKGROUND SECTION -->
+<section
+  class="section bg-photo"
+  style="
+    --photo-url: url('assets/Insights-bg-photo2.jpg');
+    --photo-pos: center;
+    --photo-opacity: 0.95;
+    --photo-tint-top: rgba(11,18,32,0.92);
+    --photo-tint-mid: rgba(11,18,32,0.58);
+    --photo-tint-bot: rgba(11,18,32,0.92);
+    --photo-filter: saturate(1) contrast(1) brightness(1.08);
+  "
+>
+
+  <!-- HERO -->
+  <section class="page-title insights-hero">
+    <div class="container">
+      <div class="page-hero-grid">
+
+        <!-- LEFT: COPY -->
+        <div class="page-hero-copy">
+          <div class="kicker">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+            Guides • Articles • Reference Posts
+          </div>
+
+          <h1 style="margin-top:14px;">Insights</h1>
+
+          <p class="subtle" style="max-width:78ch; margin-top:10px;">
+            Practical materials on alternative investing, real estate fundamentals, and the tax &amp; liquidity lens
+            we use when evaluating opportunities.
+          </p>
+
+          <!-- Bullets instead of pills -->
+          <div class="meta-row" aria-label="Content attributes" style="margin-top:14px;">
+            <span class="meta-item"><span class="meta-dot"></span> Educational</span>
+            <span class="meta-item"><span class="meta-dot"></span> Tax-aware</span>
+            <span class="meta-item"><span class="meta-dot"></span> Actionable</span>
+          </div>
+
+          <div class="hero-actions" style="margin-top:20px;">
+            <a class="btn" href="#resources">Resources</a>
+            <a class="btn" href="#articles">Articles</a>
+            <a class="btn primary" href="#linkedin">LinkedIn Highlights</a>
+          </div>
+
+          <div class="callout-lite" style="margin-top:16px;">
+            <strong style="color:var(--text); font-weight:400;">Note:</strong>
+            <span class="note-subtle">These materials are for educational purposes only and are not an offer to sell securities.</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: HERO IMAGE + CAPTION -->
+        <div class="page-hero-media infographic" aria-label="Risk vs Return infographic">
+          <img src="assets/risk_return_web_optimized_v4.png" alt="Risk vs Return by investment type">
+
+          <div class="hero-caption">
+            * Conceptual Placement (illustrative only). Not investment advice. Past performance is not indicative of future results.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="section" id="resources">
+    <div class="container">
+      <h2>Resources</h2>
+      <p class="subtle">Materials designed to educate, be practical and investor-friendly.</p>
+
+      <div class="grid3" style="margin-top:14px;">
+
+        <!-- Ebook (placeholder until live) -->
+        <div class="card">
+          <img class="media" src="assets/portfolio-ebook.jpg" alt="Ebook cover placeholder">
+          <h3>Ebook - The New Landscape of Alternative Investing</h3>
+
+          <div class="item-meta">
+            <span class="item-tag">Ebook</span>
+            <span class="item-tag">Coming soon</span>
+          </div>
+
+          <ul class="subtle" style="margin:10px 0 0; padding-left:22px; line-height:1.7;">
+            <li>A framework for evaluating alternative investments with a focus on tax, liquidity, and downside scenarios</li>
+            <li>Risk vs. return framing across investment types</li>
+            <li>Tax &amp; liquidity lens for wage earners</li>
+            <li>Real estate fundamentals and value-add execution</li>
+          </ul>
+
+          <div style="margin-top:12px;">
+            <a class="btn primary" href="contact-v2.html">Get notified when it’s live</a>
+          </div>
+        </div>
+
+        <!-- NEW RESOURCE -->
+        <div class="card">
+          <img class="media" src="assets/tax-advantaged-real-assets-cover.png" alt="Tax-advantaged real asset investing guide cover">
+          <h3>Turning Business Profits into Tax-Advantaged Real Asset Investments</h3>
+
+          <div class="item-meta">
+            <span class="item-tag">PDF Guide</span>
+            <span class="item-tag">Business owners</span>
+            <span class="item-tag">Tax-aware</span>
+          </div>
+
+          <p class="subtle">
+            A practical overview of value-add multifamily and development partnerships, how depreciation and cost segregation
+            typically work, and the diligence questions to ask before investing.
+          </p>
+
+          <div style="margin-top:12px;">
+            <a class="btn primary" href="assets/Tax-Advantaged-Real-Asset-Investing-for-Business-Owners.pdf" target="_blank" rel="noopener">
+              Download the guide (PDF)
+            </a>
+          </div>
+
+          <p <span class="note-subtle" style="margin-top:18px;">
+            * Educational only - not tax, legal, or investment advice.
+          </p>
+        </div>
+
+        <!-- CTA tile -->
+        <div class="card">
+          <h3>Prefer email updates?</h3>
+          <p class="subtle">
+            If you want an occasional note when something substantive is published, join the investor list.
+          </p>
+          <div style="margin-top:12px;">
+            <a class="btn primary" href="contact-v2.html">Join Investor List</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<!-- INSIGHTS: RELATED ARTICLES + LINKEDIN (ONE CONTINUOUS BACKGROUND) -->
+<section class="section bg-photo" style="--photo-url: url('assets/Approach-hero.png');" id="insights-bottom">
+  <div class="container">
+
+    <!-- RELATED ARTICLES -->
+    <div id="articles">
+      <h2>Related Articles</h2>
+      <p class="subtle" style="max-width:90ch;">
+        Third-party articles that discuss the importance of real estate as a key component of a balanced,
+        return-focused investment portfolio.
+      </p>
+
+      <div class="grid3" style="margin-top:14px;">
+        <!-- Article 1: Kiplinger -->
+        <a class="preview-card" href="https://www.kiplinger.com/real-estate/real-estate-investing/why-property-investing-reigns-supreme"
+           target="_blank" rel="noopener noreferrer" aria-label="Read Kiplinger article: Why Property Investing Reigns Supreme">
+          <div class="preview-media">
+            <img src="assets/preview-kiplinger.jpg" alt="Kiplinger article preview image">
+          </div>
+          <div class="preview-body">
+            <div class="preview-top">
+              <span class="preview-domain">kiplinger.com</span>
+              <span class="preview-badge">External</span>
+            </div>
+            <h3 class="preview-title">Why Property Investing Reigns Supreme</h3>
+            <p class="preview-desc">
+              A helpful perspective on why income-producing real estate has remained durable across cycles.
+            </p>
+            <div class="preview-cta">Read article →</div>
+            <div class="preview-foot">Source: Kiplinger. Linked for reference and commentary.</div>
+          </div>
+        </a>
+
+        <!-- Article 2: Morningstar -->
+        <a class="preview-card"
+           href="https://www.morningstar.com/portfolios/how-use-real-estate-your-portfolio"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Read Morningstar article: How to Use Real Estate in Your Portfolio">
+          <div class="preview-media">
+            <img src="assets/preview-morningstar.jpg" alt="Morningstar real estate portfolio article preview">
+          </div>
+          <div class="preview-body">
+            <div class="preview-top">
+              <span class="preview-domain">morningstar.com</span>
+              <span class="preview-badge">External</span>
+            </div>
+            <h3 class="preview-title">How to Use Real Estate in Your Portfolio</h3>
+            <p class="preview-desc">
+              A clear, investor-focused explanation of where real estate fits within a diversified portfolio,
+              including risk, return, and allocation considerations.
+            </p>
+            <div class="preview-cta">Read article →</div>
+            <div class="preview-foot">Source: Morningstar. Linked for educational reference.</div>
+          </div>
+        </a>
+
+        <!-- Why this section exists -->
+        <div class="card">
+          <h3>Why external articles?</h3>
+          <p class="subtle" style="margin-top:8px;">
+            A few credible sources to support your learning journey. If you have an article you’d like to share,
+            send it my way.
+          </p>
+          <div style="margin-top:12px;">
+            <a class="btn primary" href="contact-v2.html">Share an Article</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subtle internal divider (does NOT create a new section background) -->
+    <div class="section-divider" aria-hidden="true"></div>
+
+    <!-- LINKEDIN -->
+    <div id="linkedin">
+      <h2>LinkedIn Highlights</h2>
+      <p class="subtle" style="max-width:90ch;">
+        A few posts with commentary and real-world examples from active ownership and execution.
+      </p>
+
+      <div class="grid3" style="margin-top:14px;">
+        <!-- LinkedIn post 1 -->
+        <a class="preview-card" href="https://www.linkedin.com/posts/seatosummitinvestments_realestate-investmentstrategy-alternativeassets-activity-7391200394917502977-yUSO"
+           target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn post about property investing article">
+          <div class="preview-media">
+            <img src="assets/preview-linkedin-property.jpg" alt="LinkedIn post preview image">
+          </div>
+          <div class="preview-body">
+            <div class="preview-top">
+              <span class="preview-domain">linkedin.com</span>
+              <span class="preview-badge">LinkedIn</span>
+            </div>
+            <h3 class="preview-title">Why property investing stands out</h3>
+            <p class="preview-desc">
+              A quick takeaway and why I thought this Kiplinger piece was worth sharing.
+            </p>
+            <div class="preview-cta">View post →</div>
+            <div class="preview-foot">Informational only. Not investment advice.</div>
+          </div>
+        </a>
+
+        <!-- LinkedIn post 2 -->
+        <a class="preview-card" href="https://www.linkedin.com/posts/seatosummitinvestments_multifamilyinvesting-interiordesign-littleitalysd-activity-7405332959026671639-holb"
+           target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn post about Little Italy remodel">
+          <div class="preview-media">
+            <img src="assets/preview-linkedin-remodel.jpg" alt="Little Italy remodel preview image">
+          </div>
+          <div class="preview-body">
+            <div class="preview-top">
+              <span class="preview-domain">linkedin.com</span>
+              <span class="preview-badge">LinkedIn</span>
+            </div>
+            <h3 class="preview-title">Little Italy remodel recap</h3>
+            <p class="preview-desc">
+              A look at a successful value-add renovation completed on Sea to Summit's midrise condo in Little Italy San Diego.
+            </p>
+            <div class="preview-cta">View post →</div>
+            <div class="preview-foot">Informational only. Not investment advice.</div>
+          </div>
+        </a>
+
+        <!-- Follow card -->
+        <div class="card">
+          <h3>Follow along</h3>
+          <p class="subtle" style="margin-top:8px;">
+            For periodic notes on markets, investing frameworks, and behind-the-scenes execution.
+          </p>
+          <div style="margin-top:12px;">
+            <a class="btn primary" href="https://www.linkedin.com/in/seatosummitinvestments"
+               target="_blank" rel="noopener noreferrer">
+              Visit my LinkedIn profile
+            </a>
+          </div>
+          <p class="subtle" style="margin-top:10px; font-size:13px; font-style:italic;">
+            Note: Posts are informational and not investment advice.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout-lite" style="margin-top:16px;">
+        <strong style="color:var(--text);">Principle:</strong>
+        <span class="subtle">Understanding markets is understanding opportunity.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>© <span id="year"></span> Sea to Summit Investments LLC. All rights reserved.</div>
+        <div>Stewardship • Transparency • Long-Term Alignment</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

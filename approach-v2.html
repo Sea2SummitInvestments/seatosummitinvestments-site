@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Our Approach | Sea to Summit Investments</title>
+  <meta name="description" content="Our disciplined, purpose-driven approach to passive multifamily investing." />
+  <link rel="icon" href="assets/logo.jpg" />
+  <link rel="stylesheet" href="styles-v2.css" />
+
+  <style>
+    .page-title { padding: 28px 0 10px; }
+    .subtle { color: var(--muted); }
+
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .pillrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+
+    .step-grid{ margin-top: 14px; }
+    .step-card h3{ margin-bottom: 8px; }
+    .bullets{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.7; }
+    .bullets li{ margin: 8px 0; }
+
+    .callout-lite{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-top: 14px;
+    }
+
+    /* Optional: a clean “process strip” visual */
+    .process-strip{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .process-pill{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      border-radius: 14px;
+      padding: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .dot{
+      width:10px;
+      height:10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.25);
+      border: 1px solid var(--line);
+      flex: 0 0 auto;
+    }
+    @media (max-width: 960px){
+      .process-strip{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="row">
+        <a class="brand" href="index-v2.html" aria-label="Sea to Summit Investments home">
+          <img src="assets/logo.jpg" alt="Sea to Summit Investments" class="brand-logo">
+        </a>
+
+        <div class="navlinks" aria-label="Primary">
+          <a href="index-v2.html">Home</a>
+          <a href="approach-v2.html">Our Approach</a>
+          <a href="portfolio-v2.html">Portfolio</a>
+          <a href="market-v2.html">Market</a>
+          <a href="insights-v2.html">Insights</a>
+          <a href="about-v2.html">About</a>
+          <a href="contact-v2.html">Contact</a>
+        </div>
+
+        <div class="ctas">
+          <a class="btn primary" href="contact-v2.html">Join Investor List</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- TITLE / HERO -->
+<section class="page-hero">
+  <div class="container">
+
+    <!-- NEW: 2-column grid -->
+    <div class="page-hero-grid">
+
+      <!-- LEFT: your existing hero card -->
+      <div class="hero-card">
+        <div class="kicker">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z" stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+          Stewardship • Discipline • Purpose
+        </div>
+
+        <h1 style="margin-top:14px;">Our Approach</h1>
+
+        <p style="max-width:78ch; margin-top:10px;">
+          We invest with stewardship, discipline, and purpose: improving communities and pursuing durable, long-term outcomes for investors.
+        </p>
+
+        <!-- meta row -->
+        <div class="meta-row" aria-label="Key attributes">
+          <span class="meta-item"><span class="meta-dot"></span> Necessity-based housing</span>
+          <span class="meta-item"><span class="meta-dot"></span> Conservative underwriting</span>
+          <span class="meta-item"><span class="meta-dot"></span> Operational execution</span>
+          <span class="meta-item"><span class="meta-dot"></span> Transparent reporting</span>
+        </div>
+
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="btn" href="portfolio-v2.html">View Portfolio Snapshot</a>
+          <a class="btn primary" href="contact.html">Join Investor List</a>
+        </div>
+
+        <div class="hero-divider">
+          <div class="soft-label">
+            <strong style="color:var(--text); font-weight:650;">Guiding principle:</strong>
+            <span>Protect downside first. Then earn upside through execution.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: photo card -->
+      <div
+        class="hero-media-card"
+        style="--hero-media-url: url('assets/Approach-hero.png');"
+        aria-label="Multifamily community photo"
+      >
+        <div class="wrap">
+          <div class="media"></div>
+          <div class="caption brand-caption">Disciplined underwriting • Operational execution • Resident experience</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- MAIN CONTENT -->
+<section class="section bg-photo"
+  style="--photo-url: url('assets/Approach-bg-photo.jpg'); --photo-pos: center;">
+  <div class="container">
+      <h2 class="section-title">How We Execute</h2>
+      <p class="subtle">
+        Our process follows a simple lifecycle. Each step has clear underwriting gates, operational priorities
+        and communication expectations.
+      </p>
+
+      <div class="grid3 step-grid">
+        <div class="card step-card">
+          <div class="icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M4 12h16M4 7h16M4 17h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Acquisition</h3>
+          <ul class="bullets">
+            <li>Source and underwrite durable, necessity-based assets</li>
+            <li>Negotiate purchase and financing from a position of discipline</li>
+            <li>Conservative pro formas, sensitivity-tested</li>
+          </ul>
+        </div>
+
+        <div class="card step-card">
+          <div class="icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3v18M5 10l7-7 7 7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Value-Add</h3>
+          <ul class="bullets">
+            <li>Unit interiors: flooring, fixtures, paint, appliances as needed</li>
+            <li>Exterior & curb appeal: signage, landscaping, amenities, brand</li>
+            <li>Operational excellence: PM optimization, expense discipline</li>
+          </ul>
+        </div>
+
+        <div class="card step-card">
+          <div class="icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M7 12l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+            </svg>
+          </div>
+          <h3>Operations</h3>
+          <ul class="bullets">
+            <li>Resident experience focus to support retention and rents</li>
+            <li>Quarterly reporting and consistent communication</li>
+            <li>Adequate reserves and data-driven decision making</li>
+          </ul>
+        </div>
+
+        <div class="card step-card">
+          <div class="icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M3 21h18M6 21V7l6-4 6 4v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Refinance / Exit</h3>
+          <ul class="bullets">
+            <li>Primary path: refinance and harvest long-term cash flow</li>
+            <li>Secondary path: strategic sale depending on market conditions</li>
+            <li>Objective: prudent risk, attractive long-term outcomes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout-lite" style="margin-top:16px;">
+        <strong style="color:var(--text);">Communication standard:</strong>
+        <span class="subtle">Consistent updates, clear context, and direct discussion of risks and decisions.</span>
+      </div>
+    </div>
+
+  <!-- OPTIONAL: SIMPLE “WHAT WE LOOK FOR / AVOID” -->
+    <div class="container">
+      <h2 class="section-title">What We Look For</h2>
+      <p class="subtle">A simple filter that keeps decision-making consistent across markets and cycles.</p>
+
+      <div class="grid3" style="margin-top:14px;">
+        <div class="card">
+          <h3>Downside Protection</h3>
+          <p class="subtle">Conservative assumptions, adequate reserves, and thoughtful debt structures.</p>
+        </div>
+        <div class="card">
+          <h3>Alignment</h3>
+          <p class="subtle">Sponsors and operators with skin in the game and transparent incentives.</p>
+        </div>
+        <div class="card">
+          <h3>Execution Path</h3>
+          <p class="subtle">A clear plan to improve NOI through operations, upgrades, and resident experience.</p>
+        </div>
+      </div>
+
+      <div class="grid3" style="margin-top:14px;">
+        <div class="card">
+          <h3>We Avoid</h3>
+          <ul class="bullets">
+            <li>Overly aggressive rent-growth assumptions</li>
+            <li>Thin reserves or fragile leverage</li>
+            <li>Complexity without clear benefit</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>We Prefer</h3>
+          <ul class="bullets">
+            <li>Simple structures with clear governance</li>
+            <li>Transparent reporting and decision cadence</li>
+            <li>Underwriting that holds up in downside cases</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Next Step</h3>
+          <p class="subtle">If our approach resonates, join the investor list to receive updates when opportunities arise.</p>
+          <div style="margin-top:12px;">
+            <a class="btn primary" href="contact-v2.html">Join Investor List</a>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>© <span id="year"></span> Sea to Summit Investments LLC. All rights reserved.</div>
+        <div>Stewardship • Transparency • Long-Term Alignment</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

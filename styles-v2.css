@@ -1,0 +1,1173 @@
+:root{
+  /* Slightly lighter base */
+  --bg: #0c1526;
+
+  /* Core surfaces */
+  --panel: rgba(255,255,255,0.07);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.72);
+  --line: rgba(255,255,255,0.14);
+
+  /* Brand accents (keep yours) */
+  --accent: #1a7f8a;   /* Primary brand teal (logo-matched) */
+  --accent-soft: rgba(26,127,138,0.18);
+  --accent2: #60a5fa; /* blue-ish */
+
+  --shadow: 0 18px 50px rgba(0,0,0,0.35);
+  --radius: 18px;
+  --max: 1120px;
+  --pad: 22px;
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+
+  /* NEW: section banding controls */
+  --section-pad: 72px;
+  --band-a: rgba(96,165,250,0.22);   /* blue glow */
+  --band-b: rgba(45,212,191,0.20);   /* teal glow */
+  --band-c: rgba(96,165,250,0.10);
+  --band-d: rgba(45,212,191,0.10);
+
+  /* NEW: light charcoal band */
+  --charcoal-lite: #131c2a;   /* lighter than bg, still dark-mode */
+  --charcoal-grad-teal: rgba(45,212,191,0.22);
+  --charcoal-grad-blue: rgba(96,165,250,0.18);
+}
+*{ box-sizing:border-box; }
+
+html,body{
+  margin:0;
+  padding:0;
+  font-family:var(--font);
+  background:
+    radial-gradient(1200px 600px at 12% 8%, rgba(96,165,250,0.18), transparent 60%),
+    radial-gradient(900px 520px at 88% 18%, rgba(45,212,191,0.16), transparent 60%),
+    var(--bg);
+  color:var(--text);
+}
+
+a{ color:inherit; text-decoration:none; }
+p{ color:var(--muted); line-height:1.7; margin:0 0 14px; }
+h1,h2,h3{ margin:0; }
+small{ color:var(--muted); }
+
+.container{ max-width:var(--max); margin:0 auto; padding: 0 18px; }
+
+/* Top Nav */
+.nav{
+  position: sticky; top:0; z-index:50;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255,255,255,0.06);           /* lighter glass */
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+.navlinks a{
+  color: rgba(255,255,255,0.78);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.navlinks a:hover{
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.96);
+}
+.nav .row{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 14px 0;
+}
+.nav::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-1px;
+  height:1px;
+  background: linear-gradient(90deg, transparent, rgba(45,212,191,0.28), rgba(96,165,250,0.22), transparent);
+  pointer-events:none;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:650;
+  letter-spacing:0.2px;
+}
+.brand-badge{
+  width:34px; height:34px; border-radius:12px;
+  background: linear-gradient(135deg, rgba(45,212,191,0.95), rgba(96,165,250,0.9));
+  box-shadow: var(--shadow);
+}
+.navlinks{ display:flex; gap:16px; align-items:center; }
+.navlinks a{ color:var(--muted); padding:8px 10px; border-radius: 10px; }
+.navlinks a:hover{ background: rgba(255,255,255,0.06); color:var(--text); }
+
+.ctas{ display:flex; gap:10px; align-items:center; }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+}
+.btn:hover{ background: rgba(255,255,255,0.09); }
+.btn.primary{
+  border: 0;
+  background: linear-gradient(135deg, rgba(45,212,191,0.95), rgba(96,165,250,0.9));
+  color: #07111f;
+  font-weight: 650;
+}
+
+/* Hero */
+.hero{
+  padding: 46px 0 26px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 22px;
+  align-items: stretch;
+}
+.hero-card{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.04);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+.hero-copy{ padding: 28px; }
+.kicker{
+  display:inline-flex; align-items:center; gap:8px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.hero h1{
+  font-size: 44px;
+  line-height:1.06;
+  margin: 14px 0 12px;
+  letter-spacing:-0.6px;
+}
+.hero p{ font-size: 16px; max-width: 58ch; }
+.hero-actions{ display:flex; gap:10px; margin-top: 18px; flex-wrap:wrap; }
+
+.hero-media{
+  position: relative;
+  min-height: 360px;
+  background:
+    linear-gradient(180deg, rgba(12,21,38,0.14), rgba(12,21,38,0.92)),
+    url("assets/hero3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.hero-media .overlay{
+  position:absolute; inset:0;
+  padding: 22px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  gap: 10px;
+}
+/* Brand-styled media caption */
+.brand-caption{
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--accent); /* teal brand color */
+}
+/* Brand-accent section headings */
+.section-title{
+  color: var(--accent);
+  font-weight: 750;
+  letter-spacing: -0.2px;
+}
+
+.section-title::after{
+  content:"";
+  display:block;
+  width: 44px;
+  height: 3px;
+  margin-top: 12px;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--accent-soft)
+  );
+}
+
+/* Page hero spacing system */
+.page-hero .hero-card{
+  padding: 42px 44px 34px; /* was tighter */
+}
+
+@media (max-width: 960px){
+  .page-hero .hero-card{
+    padding: 26px 24px 24px;
+  }
+}
+
+/* Vertical rhythm inside title blocks */
+.page-hero .kicker{
+  margin-bottom: 18px;
+}
+
+.page-hero h1{
+  margin-bottom: 14px;
+}
+
+.page-hero p{
+  margin-bottom: 22px;
+  max-width: 78ch;
+}
+
+.page-hero .meta-row{
+  margin-bottom: 26px;
+}
+/* Clickable meta links in hero */
+.meta-link{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color: var(--muted);
+  text-decoration:none;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+}
+.meta-link:hover{
+  color: var(--text);
+  background: rgba(255,255,255,0.06);
+}
+
+/* More breathing room for page heroes (Portfolio/Approach/Market) */
+.page-hero{
+  padding: 72px 0 34px;
+}
+@media (max-width: 960px){
+  .page-hero{ padding: 48px 0 26px; }
+}
+
+/* Optional: make hero-card padding a touch roomier */
+.page-hero .hero-card{
+  padding: 42px 44px 34px;
+}
+@media (max-width: 960px){
+  .page-hero .hero-card{ padding: 26px 24px 24px; }
+}
+
+.page-hero .hero-actions{
+  margin-bottom: 28px;
+}
+html{ scroll-behavior: smooth; }
+
+/* Principle strip needs the most air */
+.page-hero .hero-divider{
+  padding-top: 22px;
+  margin-top: 28px;
+}
+
+.statgrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.stat{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.05);
+  border-radius: 14px;
+  padding: 12px 12px;
+}
+.stat .num{ font-size: 18px; font-weight: 700; }
+.stat .lab{ font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+.section{
+  padding: var(--section-pad) 0;
+  position: relative;
+  isolation: isolate;
+}
+
+/* subtle separator without striping */
+.section + .section{
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+.section.bg-photo + .section,
+.section + .section.bg-photo{
+  border-top: 0;
+}
+
+
+.section.alt::before{
+  background:
+    linear-gradient(
+      90deg,
+      #111a28 0%,
+      #111a28 60%,
+      rgba(45,212,191,0.10) 88%,
+      rgba(45,212,191,0.14) 100%
+    );
+}
+.section h2{
+  font-size: 26px;
+  margin-bottom: 18px;
+  letter-spacing:-0.3px;
+}
+.section h2 + p{
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+.section .grid3,
+.section .two-up{
+  margin-top: 28px;
+}
+.section.alt .grid3{
+  margin-top: 36px;
+}
+.section{
+  padding-bottom: calc(var(--section-pad) + 12px);
+}
+.section h2{
+  margin-top: 60px;
+  margin-bottom: 18px;
+}
+.section h2 + p{
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+.grid3{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+/* Feature section (image left, copy right) */
+.feature{
+  display:grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+@media (max-width: 960px){
+  .feature{ grid-template-columns: 1fr; }
+}
+
+/* Use your existing card styling, but allow “full height” */
+.feature-card{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+
+/* Image treatment */
+.feature-media{
+  padding: 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.feature-media img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+}
+
+/* Copy treatment */
+.feature-copy{
+  padding: 22px;
+}
+
+.feature-copy h3{
+  font-size: 22px;
+  margin-bottom: 10px;
+  letter-spacing: -0.2px;
+}
+
+.feature-list{
+  margin: 0;
+  padding-left: 18px;
+}
+
+.feature-list li{
+  margin: 10px 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.card{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.icon{
+  width: 34px; height: 34px;
+  border-radius: 12px;
+  display:inline-flex; align-items:center; justify-content:center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--line);
+  margin-bottom: 10px;
+}
+
+/* Infographic placeholders */
+.placeholder{
+  border: 1px dashed rgba(255,255,255,0.28);
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+.ph-title{
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom: 10px;
+}
+.ph-title strong{ font-size: 14px; }
+.ph-title span{ font-size: 12px; color: var(--muted); }
+.ph-box{
+  width:100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border: 1px solid var(--line);
+  display:flex; align-items:center; justify-content:center;
+  color: rgba(255,255,255,0.6);
+  font-size: 13px;
+}
+
+/* Footer */
+.footer{
+  padding: 24px 0 34px;
+  border-top: 1px solid var(--line);
+  margin-top: 20px;
+}
+.footer .row{
+  display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 960px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero h1{ font-size: 38px; }
+  .grid3{ grid-template-columns: 1fr; }
+  .navlinks{ display:none; } /* keep simple; you can add a menu later */
+}
+
+/* Logo sizing */
+.brand-logo{
+  height: 120px;
+  width: auto;
+  display: block;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  padding: 6px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+}
+/* constrain inside navbar */
+.nav .brand-logo{ height: 72px; }
+/* mobile */
+@media (max-width: 600px){
+  .nav .brand-logo{ height: 56px; }
+  .ctas .btn{ padding: 8px 10px; }
+}
+
+/* Custom grids */
+.why-grid{ grid-template-columns: 1.1fr 0.9fr 1fr; }
+@media (max-width: 960px){
+  .why-grid{ grid-template-columns: 1fr; }
+}
+
+/* Assets */
+.asset-card img{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 12px;
+}
+.asset-meta{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 6px 0 8px;
+}
+.asset-tag{
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  color: var(--muted);
+}
+
+/* Two-up utility */
+.two-up{ grid-template-columns: 1fr 1fr; }
+@media (max-width: 960px){
+  .two-up{ grid-template-columns: 1fr; }
+}
+.infographic{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+}
+/* Page title blocks */
+.page-hero{
+  padding: 72px 0 36px; /* more air above/below */
+}
+
+.page-hero .hero-card{
+  padding: 34px 34px 26px; /* more breathing room inside */
+}
+
+@media (max-width: 960px){
+  .page-hero{ padding: 40px 0 28px; }
+  .page-hero .hero-card{ padding: 22px; }
+}
+
+/* Replace bubble rows with a clean meta line */
+.meta-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px 14px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.meta-item{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 0;              /* no bubble */
+  border: 0;
+  background: transparent; /* no bubble */
+}
+
+.meta-dot{
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.28);
+  display:inline-block;
+}
+
+/* If you want subtle separators instead of dots */
+.meta-sep{
+  width: 1px;
+  height: 14px;
+  background: rgba(255,255,255,0.12);
+  align-self:center;
+}
+
+/* Optional: a “soft label” look (not a pill) */
+.soft-label{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.78);
+  font-size: 12px;
+}
+
+/* Give more space before the principle strip */
+.hero-divider{
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+/* Page hero with optional media (2-col, collapses on mobile) */
+.page-hero-grid{
+  display:grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+@media (max-width: 960px){
+  .page-hero-grid{ grid-template-columns: 1fr; }
+}
+
+/* Media card for title blocks */
+.hero-media-card{
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  min-height: 360px;
+}
+
+@media (max-width: 960px){
+  .hero-media-card{ min-height: 240px; }
+}
+
+/* Use background-image to avoid layout shifts */
+.hero-media-card .media{
+  width:100%;
+  height:100%;
+  background:
+    linear-gradient(180deg, rgba(11,18,32,0.20), rgba(11,18,32,0.90)),
+    var(--hero-media-url);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Optional caption overlay */
+.hero-media-card .caption{
+  position:absolute;
+  inset:auto 0 0 0;
+  padding: 14px 16px;
+  color: rgba(255,255,255,0.78);
+  font-size: 12px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  background: rgba(11,18,32,0.35);
+  backdrop-filter: blur(8px);
+}
+.hero-media-card .wrap{
+  position:relative;
+  width:100%;
+  height:100%;
+}
+.disclaimer{
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.5;
+  opacity: 0.75;
+  max-width: 82ch;
+  margin-top: 14px;
+}
+.page-hero-grid{
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.page-hero-copy{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.04);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.page-hero-media{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+}
+
+.page-hero-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile */
+@media (max-width: 960px){
+  .page-hero-grid{
+    grid-template-columns: 1fr;
+  }
+  .page-hero-media{
+    min-height: 220px;
+  }
+}
+.section{
+  scroll-margin-top: 110px; /* adjust if nav height changes */
+}
+.section:target .section-title{
+  color: var(--accent);
+}
+.section-title{
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.section{
+  padding: 64px 0; /* more vertical rhythm */
+}
+
+/* Page hero (title blocks) — roomy + supports right-side media */
+.page-title{
+  padding: 44px 0 26px; /* more breathing room */
+}
+
+.page-hero-grid{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.page-hero-copy{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.04);
+  box-shadow: var(--shadow);
+  padding: 30px;
+}
+
+.page-hero-media{
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.04);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+  min-height: 360px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+.page-hero-media img{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  display:block;
+}
+
+.page-hero-media .media-overlay{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(11,18,32,0.15), rgba(11,18,32,0.88));
+}
+
+.page-hero-media .media-caption{
+  position:relative;
+  z-index:1;
+  padding: 14px 16px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.78);
+  border-top: 1px solid rgba(255,255,255,0.10);
+  background: rgba(11,18,32,0.35);
+  backdrop-filter: blur(8px);
+}
+
+.callout-lite{
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.04);
+}
+
+/* Optional: reduce pill visual “density” */
+.pillrow{
+  margin-top: 14px;
+  row-gap: 10px;
+}
+
+@media (max-width: 960px){
+  .page-hero-grid{ grid-template-columns: 1fr; }
+  .page-hero-media{ min-height: 260px; }
+  .page-hero-copy{ padding: 24px; }
+}
+/* Subtle legal/educational note */
+.note-subtle{
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255,255,255,0.58);
+}
+/* Infographic-friendly hero media */
+.page-hero-media.infographic{
+  background: rgba(255,255,255,0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* Show entire image (no crop) */
+.page-hero-media.infographic img{
+  width: 100%;
+  height: auto;          /* key: don't force height */
+  max-height: 520px;     /* keeps it from becoming huge */
+  object-fit: contain;   /* key: no cropping */
+  border-radius: 16px;
+  border: 1px solid var(--line);
+}
+
+/* Mobile: let it breathe but stay readable */
+@media (max-width: 960px){
+  .page-hero-media.infographic img{
+    max-height: 420px;
+  }
+}
+/* Insights-specific hero tuning */
+.insights-hero .page-hero-grid{
+  grid-template-columns: 0.95fr 1.05fr; /* give image more room */
+}
+
+/* Slightly compact the text card */
+.insights-hero .page-hero-copy{
+  padding: 26px;              /* was ~30–34px */
+}
+
+/* Let the infographic breathe vertically */
+.insights-hero .page-hero-media.infographic img{
+  max-height: 560px;          /* larger than other pages */
+}
+
+/* On very wide screens, allow a bit more horizontal feel */
+@media (min-width: 1400px){
+  .insights-hero .page-hero-grid{
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+/* Caption below the Insights infographic (never overlays the image) */
+.page-hero-media.infographic{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.page-hero-media.infographic img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-caption{
+  font-size: 12px;
+  font-style: italic;
+  color: var(--muted);
+  opacity: 0.9;
+  line-height: 1.45;
+  padding: 0 2px;
+}
+.media{
+  width:100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.03);
+  margin-bottom: 12px;
+}
+.item-meta{ display:flex; gap:8px; flex-wrap:wrap; margin: 8px 0 10px; }
+.item-tag{
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  color: var(--muted);
+}
+/* Link preview cards (email-like previews) */
+.preview-card{
+  display:grid;
+  grid-template-columns: 1fr;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.04);
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  text-decoration:none;
+  color: inherit;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.preview-card:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.18);
+}
+.preview-media img{
+  width:100%;
+  height: 160px;
+  object-fit: cover;
+  display:block;
+}
+.preview-body{
+  padding: 16px 16px 14px;
+}
+.preview-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom: 8px;
+}
+.preview-domain{
+  font-size: 12px;
+  color: var(--muted);
+}
+.preview-badge{
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,0.04);
+  color: var(--muted);
+}
+.preview-title{
+  margin:0 0 8px;
+  font-size: 16px;
+  line-height: 1.25;
+}
+.preview-desc{
+  margin:0 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.preview-cta{
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.preview-foot{
+  font-size: 12px;
+  font-style: italic;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.45;
+}
+/* RIGHT HERO COLUMN — allow vertical stretching */
+.logo-hero{
+  position: relative;
+  display: flex;
+  align-items: stretch;   /* KEY: let child fill vertical space */
+}
+
+/* Logo stage now fills full height of hero card */
+.logo-stage{
+  position: relative;
+  width: 100%;
+  
+  display: flex;
+  align-items: center;    /* center logo vertically */
+  justify-content: center;
+
+  /* Keep horizontal padding, increase vertical padding */
+  padding: 48px 28px;     /* thicker top/bottom, same sides */
+
+  border-radius: var(--radius);
+  overflow: visible;
+
+  background:
+    radial-gradient(900px 520px at 20% 18%, rgba(96,165,250,0.14), transparent 62%),
+    radial-gradient(900px 520px at 86% 22%, rgba(45,212,191,0.16), transparent 60%),
+    linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+}
+
+/* Subtle right-edge brand lift */
+.logo-stage::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 62%,
+      rgba(45,212,191,0.10) 88%,
+      rgba(45,212,191,0.14) 100%
+    );
+}
+
+/* Very light grain */
+.logo-stage::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  opacity: 0.10;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* Logo itself — unchanged framing */
+.logo-img{
+  position: relative;
+  z-index: 1;
+  width: min(520px, 92%);
+  height: auto;
+  object-fit: contain;
+
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 22px 60px rgba(0,0,0,0.40);
+}
+
+/* Mobile */
+@media (max-width: 960px){
+  .logo-stage{
+    padding: 32px 18px;
+  }
+  .logo-img{
+    width: min(420px, 94%);
+    border-radius: 16px;
+  }
+} /* <-- IMPORTANT: closes the @media block */
+
+/* Subtle divider INSIDE a single background section (no stripe) */
+.section-divider{
+  height: 34px;
+  margin: 34px 0;
+  position: relative;
+}
+.section-divider::before{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:50%;
+  height: 1px;
+  transform: translateY(-50%);
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.00),
+    rgba(255,255,255,0.10),
+    rgba(255,255,255,0.00)
+  );
+}
+/* INSIGHTS background alias (uses the bg-photo system) */
+.section.bg-insights{
+  --photo-url: url("assets/Approach-hero.png");
+  --photo-opacity: 0.90;
+  --photo-pos: center;
+}
+
+/* optional: reduce the section border line so it doesn't look stripey */
+.section.bg-insights{
+  border-top-color: rgba(255,255,255,0.04);
+}
+/* -------------------------------------------
+   SECTION BACKGROUND SYSTEM (single source)
+-------------------------------------------- */
+
+/* Make every section able to host ::before safely */
+.section{
+  position: relative;
+  isolation: isolate;
+}
+
+/* Default glow background for normal sections */
+.section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(1200px 520px at 18% 30%, rgba(96,165,250,0.14), transparent 65%),
+    radial-gradient(1000px 520px at 82% 60%, rgba(45,212,191,0.12), transparent 62%);
+}
+
+/* PHOTO BACKGROUND (opt-in per section) */
+.section.bg-photo{
+  position: relative;
+  isolation: isolate; /* keep pseudo-element behind children */
+
+  /* defaults (can be overridden per section/page) */
+  --photo-url: none;                 /* e.g. url("assets/bg-photo.png") */
+  --photo-opacity: 0.85;
+  --photo-pos: center;
+  --photo-tint-top: rgba(11,18,32,0.95);
+  --photo-tint-mid: rgba(11,18,32,0.62);
+  --photo-tint-bot: rgba(11,18,32,0.92);
+  --photo-filter: saturate(0.95) contrast(0.95) brightness(0.95);
+}
+
+/* If bg-photo is present, paint the photo + tint */
+.section.bg-photo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--photo-tint-top) 0%,
+      var(--photo-tint-mid) 55%,
+      var(--photo-tint-bot) 100%
+    ),
+    var(--photo-url);
+
+  background-size: cover;
+  background-position: var(--photo-pos);
+  background-repeat: no-repeat;
+
+  opacity: var(--photo-opacity);
+  filter: var(--photo-filter);
+}
+
+/* Optional: subtle top fade so it blends into the page bg */
+.section.bg-photo::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:0;
+  height: 80px;
+  z-index:-1;
+  pointer-events:none;
+  background: linear-gradient(180deg, rgba(11,18,32,1), rgba(11,18,32,0));
+}
+.section.bg-photo .section-divider::before{
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.00),
+    rgba(255,255,255,0.07),
+    rgba(255,255,255,0.00)
+  );
+}
+/* About: remove the outer card border on the right hero column */
+.about-logo-hero{
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+/* Allow photo background system to work on HERO too */
+.hero.bg-photo{
+  position: relative;
+  isolation: isolate;
+}
+
+.hero.bg-photo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--photo-tint-top) 0%,
+      var(--photo-tint-mid) 55%,
+      var(--photo-tint-bot) 100%
+    ),
+    var(--photo-url);
+
+  background-size: cover;
+  background-position: var(--photo-pos);
+  background-repeat: no-repeat;
+
+  opacity: var(--photo-opacity);
+  filter: var(--photo-filter);
+}
+
+/* Optional: subtle top fade (matches your section fade) */
+.hero.bg-photo::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:0;
+  height: 80px;
+  z-index:-1;
+  pointer-events:none;
+  background: linear-gradient(180deg, rgba(11,18,32,1), rgba(11,18,32,0));
+}
+
+
+
+

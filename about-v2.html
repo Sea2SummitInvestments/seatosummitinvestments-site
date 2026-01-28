@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About | Sea to Summit Investments</title>
+  <meta name="description" content="About Sea to Summit Investments — stewardship, alignment, long-term focus." />
+  <link rel="icon" href="assets/logo.jpg" />
+  <link rel="stylesheet" href="styles-v2.css" />
+
+  <style>
+    .page-title { padding: 28px 0 10px; }
+    .subtle { color: var(--muted); }
+
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .pillrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+
+    /* Bio layout */
+    .bio-wrap{
+      display:grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      margin-top: 14px;
+    }
+    @media (max-width: 960px){
+      .bio-wrap{ grid-template-columns: 1fr; }
+    }
+
+    .headshot{
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .bio-bullets{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.7; }
+    .bio-bullets li{ margin: 8px 0; }
+
+    .callout-lite{
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.04);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-top: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="container">
+      <div class="row">
+        <a class="brand" href="index-v2.html" aria-label="Sea to Summit Investments home">
+          <img src="assets/logo.jpg" alt="Sea to Summit Investments" class="brand-logo">
+        </a>
+
+        <div class="navlinks" aria-label="Primary">
+          <a href="index-v2.html">Home</a>
+          <a href="approach-v2.html">Our Approach</a>
+          <a href="portfolio-v2.html">Portfolio</a>
+          <a href="market-v2.html">Market</a>
+          <a href="insights-v2.html">Insights</a>
+          <a href="about-v2.html">About</a>
+          <a href="contact-v2.html">Contact</a>
+        </div>
+
+        <div class="ctas">
+          <a class="btn primary" href="contact-v2.html">Join Investor List</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- TOP WRAPPER: Title + Commitments share one background -->
+<section
+  class="section bg-photo"
+  style="
+    --photo-url: url('assets/About-bg-photo.jpg');
+    --photo-pos: center;
+    --photo-opacity: 0.92;
+    --photo-tint-top: rgba(11,18,32,0.78);
+    --photo-tint-mid: rgba(11,18,32,0.48);
+    --photo-tint-bot: rgba(11,18,32,0.86);
+    --photo-filter: saturate(1) contrast(1) brightness(1.08);
+  "
+>
+  <!-- HERO / TITLE -->
+  <div class="container" style="padding-top: 18px; padding-bottom: 18px;">
+    <div class="page-hero-grid">
+
+      <!-- LEFT: COPY -->
+      <div class="page-hero-copy">
+        <div class="kicker">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z"
+                  stroke="currentColor" stroke-width="1.6"/>
+          </svg>
+          Stewardship • Alignment • Long-Term Focus
+        </div>
+
+        <h1 style="margin-top:16px;">About Sea to Summit Investments</h1>
+
+        <p class="subtle" style="max-width:78ch; margin-top:12px;">
+          Sea to Summit Investments is a multifamily-focused investment firm built on
+          disciplined underwriting, thoughtful execution, and long-term alignment with investors.
+          We approach real estate ownership as stewards of both capital and communities.
+        </p>
+
+        <div class="meta-row" aria-label="Operating principles" style="margin-top:16px;">
+          <span class="meta-item"><span class="meta-dot"></span> Disciplined underwriting</span>
+          <span class="meta-item"><span class="meta-dot"></span> Conservative capital structures</span>
+          <span class="meta-item"><span class="meta-dot"></span> Operational execution</span>
+        </div>
+
+        <div class="hero-actions" style="margin-top:22px;">
+          <a class="btn" href="portfolio-v2.html">View Portfolio Snapshot</a>
+          <a class="btn primary" href="contact-v2.html">Join Investor List</a>
+        </div>
+
+        <div class="callout-lite" style="margin-top:18px;">
+          <strong style="color:var(--text); font-weight:400;">Our philosophy:</strong>
+          <span class="subtle">
+            Protect downside first, align incentives clearly, and let results compound over time.
+          </span>
+        </div>
+      </div>
+
+      <!-- RIGHT: LOGO HERO (no outer border) -->
+      <div class="page-hero-media logo-hero about-logo-hero" aria-label="Sea to Summit Investments logo">
+        <div class="logo-stage">
+          <img class="logo-img" src="assets/logo_uncrop2.jpg" alt="Sea to Summit Investments logo" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- subtle divider inside same background -->
+  <div class="container">
+    <div class="section-divider"></div>
+  </div>
+
+  <!-- COMMITMENTS (still within same background) -->
+  <div class="container">
+    <h2>Our Commitments</h2>
+    <p class="subtle">A simple set of operating principles that guide decisions, communication, and accountability.</p>
+
+    <div class="grid3" style="margin-top:14px;">
+      <div class="card">
+        <h3>Stewardship</h3>
+        <p class="subtle">We treat investor capital with care and make decisions with a long-term view.</p>
+      </div>
+      <div class="card">
+        <h3>Transparency</h3>
+        <p class="subtle">We communicate clearly, provide context, and discuss risks directly.</p>
+      </div>
+      <div class="card">
+        <h3>Alignment</h3>
+        <p class="subtle">We prioritize structures and partnerships designed for durable, win-win outcomes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER BIO -->
+<section
+  class="section bg-photo"
+  style="
+    --photo-url: url('assets/About-bg-photo2.jpg');
+    --photo-pos: center;
+    --photo-opacity: 0.92;
+    --photo-tint-top: rgba(11,18,32,0.86);
+    --photo-tint-mid: rgba(11,18,32,0.62);
+    --photo-tint-bot: rgba(11,18,32,0.94);
+    --photo-filter: saturate(0.98) contrast(0.98) brightness(0.92);
+  "
+>
+  <div class="container">
+    <h2>Leadership</h2>
+    <p class="subtle">The company is led by Luke O’Dell, with strategic partnership and deal collaboration where aligned.</p>
+
+    <div class="bio-wrap">
+      <div class="card">
+        <img class="headshot" src="assets/luke-odell.jpg" alt="Luke O’Dell headshot">
+        <div style="margin-top:12px;">
+          <strong>Luke O’Dell</strong>
+          <div class="subtle">Founder • Managing Partner</div>
+        </div>
+        <div class="callout-lite" style="margin-top:12px;">
+          <strong style="color:var(--text);">Based in:</strong>
+          <span class="subtle">Southern California (operating footprint across select U.S. markets)</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0;">Bio</h3>
+        <p class="subtle">
+          Luke has invested in real estate since 2009 and focuses on buying in areas with strong upward fundamentals, with positive cashflow from day one.
+        </p>
+
+        <ul class="bio-bullets">
+          <li><strong>Real estate investing:</strong> experience across residential, commercial, and multifamily investments, including active cash-flowing assets and fully realized projects.</li>
+          <li><strong>Business investing:</strong> founding investor in Pure Project Brewing (www.pureproject.org).</li>
+          <li><strong>Operational leadership:</strong> two decades of sales and leadership experience within a business financing company, including nearly four years as VP of Sales overseeing direct and renewal divisions and sales support.</li>
+        </ul>
+
+        <div class="callout-lite">
+          <strong style="color:var(--text);">Professional philosophy:</strong>
+          <span class="subtle">Real estate outcomes are driven by relationships, clear communication, and disciplined execution across each stage of the value-add cycle.</span>
+        </div>
+
+        <div style="margin-top:14px;">
+          <a class="btn" href="contact-v2.html">Ask a Question</a>
+          <a class="btn primary" href="contact-v2.html" style="margin-left:8px;">Join Investor List</a>
+        </div>
+
+        <p class="subtle" style="margin-top:14px;">
+          Note: Links and profiles are provided for background only and are not an offer to sell securities.
+        </p>
+      </div>
+    </div>
+
+    <!-- Soft transition into next section -->
+    <div style="height:24px;"></div>
+  </div>
+</section>
+
+<!-- STRATEGIC PARTNER -->
+<section
+  class="section bg-photo"
+  style="
+    --photo-url: url('assets/About-bg-photo3.jpg');
+    --photo-pos: center;
+    --photo-opacity: 0.80;
+    --photo-tint-top: rgba(11,18,32,0.80);
+    --photo-tint-bot: rgba(11,18,32,0.97);
+    --photo-filter: saturate(0.95) contrast(0.98) brightness(0.95);
+  "
+>
+
+  <div class="container">
+    <h2>Strategic Partnership</h2>
+    <p class="subtle">
+      Sea to Summit Investments collaborates with experienced operators and sponsors on a deal-by-deal basis where aligned.
+    </p>
+
+    <div class="grid3" style="margin-top:14px;">
+
+      <!-- LEFT: Cameron -->
+      <div class="card">
+        <img class="headshot" src="assets/Cameron-Headshot.png" alt="Cameron Vance headshot">
+        <div style="margin-top:12px;">
+          <strong>Cameron Vance</strong>
+          <div class="subtle">Principal • Dry Creek Investments, LLC</div>
+        </div>
+      </div>
+
+      <!-- MIDDLE: Primary Partnership + small writeup -->
+      <div class="card">
+        <h3>Primary Partnership</h3>
+        <p class="subtle">
+          Dry Creek Investments, LLC is a multifamily investment, management, and development company based in Healdsburg, California.
+          Founded in 2021 by Cameron Vance, the principal brings a total of 20 years of industry experience and has executed nearly
+          $2 billion in multifamily acquisitions over that time.
+        </p>
+
+        <p class="subtle" style="margin-top:12px;">
+          Strategic deal collaboration and sponsorship alignment on a deal-by-deal basis where it strengthens underwriting,
+          execution, and investor outcomes.
+        </p>
+      </div>
+
+      <!-- RIGHT: combined -->
+      <div class="card">
+        <h3>Why This Matters</h3>
+        <p class="subtle">
+          This structure keeps ownership and governance clear, while allowing collaboration with proven operators as opportunities arise.
+        </p>
+
+        <div class="section-divider" style="margin:18px 0;"></div>
+
+        <h3>Investor Clarity</h3>
+        <p class="subtle">
+          Each investment opportunity stands on its own. Roles, responsibilities, and economics are defined in the offering documents
+          for that specific deal.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="callout-lite" style="margin-top:16px;">
+      <strong style="color:var(--text);">Practical takeaway:</strong>
+      <span class="subtle">Clear roles and clear documents lead to clean execution and investor confidence.</span>
+    </div>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div>© <span id="year"></span> Sea to Summit Investments LLC. All rights reserved.</div>
+        <div>Stewardship • Transparency • Long-Term Alignment</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
