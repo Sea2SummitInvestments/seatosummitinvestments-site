@@ -1167,91 +1167,57 @@ html{ scroll-behavior: smooth; }
   pointer-events:none;
   background: linear-gradient(180deg, rgba(11,18,32,1), rgba(11,18,32,0));
 }
-/* --- Mobile Nav --- */
+/* Mobile toggle button (hamburger) */
 .nav-toggle{
-  display:none;
+  display:none; /* shown only on mobile in your existing media query */
   align-items:center;
-  gap:10px;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,0.04);
+  justify-content:center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
   color: var(--text);
-  padding: 10px 12px;
-  border-radius: 999px;
-  cursor:pointer;
-  font: inherit;
+  cursor: pointer;
 }
 
-.nav-toggle-icon{
-  width: 18px;
-  height: 12px;
-  position: relative;
-  display:inline-block;
+.nav-toggle:hover{
+  background: rgba(255,255,255,0.10);
 }
-.nav-toggle-icon::before,
-.nav-toggle-icon::after{
+
+/* 3-line hamburger icon */
+.hamburger{
+  position: relative;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.hamburger::before,
+.hamburger::after{
   content:"";
   position:absolute;
-  left:0; right:0;
-  height:2px;
-  background: rgba(255,255,255,0.85);
+  left:0;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
   border-radius: 2px;
 }
-.nav-toggle-icon::before{ top:0; }
-.nav-toggle-icon::after{ bottom:0; }
-.nav-toggle-icon{
-  border-top: 2px solid rgba(255,255,255,0.85);
-  border-bottom: 2px solid rgba(255,255,255,0.85);
-  height: 0;
+
+.hamburger::before{ top: -6px; }
+.hamburger::after{ top:  6px; }
+
+/* Optional: turn into an "X" when open */
+.nav-toggle[aria-expanded="true"] .hamburger{
+  background: transparent;
 }
-
-/* Dropdown container */
-.nav-mobile{
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  margin-top: 10px;
-  padding: 10px;
-  border: 1px solid var(--line);
-  background: rgba(11,18,32,0.98);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  box-shadow: 0 18px 50px rgba(0,0,0,0.45);
-  z-index: 50;
+.nav-toggle[aria-expanded="true"] .hamburger::before{
+  top: 0;
+  transform: rotate(45deg);
 }
-
-.nav-mobile a{
-  display:block;
-  padding: 12px 12px;
-  border-radius: 12px;
-  text-decoration:none;
-  color: var(--text);
+.nav-toggle[aria-expanded="true"] .hamburger::after{
+  top: 0;
+  transform: rotate(-45deg);
 }
-
-.nav-mobile a:hover{
-  background: rgba(255,255,255,0.06);
-}
-
-.nav-mobile-cta{
-  padding: 10px 10px 4px;
-  border-top: 1px solid rgba(255,255,255,0.10);
-  margin-top: 6px;
-}
-
-/* Mobile behavior: hide desktop links, show toggle */
-@media (max-width: 960px){
-  .nav .row{ position: relative; }
-
-  .navlinks,
-  .ctas{
-    display:none;
-  }
-  .nav-toggle{
-    display:inline-flex;
-    margin-left:auto;
-  }
-}
-
-
-
-
