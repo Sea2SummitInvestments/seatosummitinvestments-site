@@ -1278,3 +1278,5 @@ html{ scroll-behavior: smooth; }
     max-height: 380px; /* keeps it readable without dominating */
   }
 }
+.nav-toggle { outline: 3px solid lime !important; }
+.nav-toggle .hamburger span { outline: 2px solid magenta !important; }
