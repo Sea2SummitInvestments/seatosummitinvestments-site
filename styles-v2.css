@@ -1167,37 +1167,20 @@ html{ scroll-behavior: smooth; }
   background: linear-gradient(180deg, rgba(11,18,32,1), rgba(11,18,32,0));
 }
 /* ============================
-   MOBILE NAV (HAMBURGER)
+   MOBILE NAV (HAMBURGER + ANIMATION)
    ============================ */
 
-/* Mobile breakpoint */
-@media (max-width: 960px){
-  .navlinks,
-  .ctas{
-    display: none;
-  }
-
-  .nav-toggle{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-  }
-
-  /* IMPORTANT:
-     Do NOT force nav-mobile to display:block.
-     The [hidden] attribute controls visibility. */
-  .nav-mobile{
-    display: block;
-  }
+/* Default: hide mobile controls on desktop */
+.nav-toggle{
+  display: none;
 }
 
-/* Honor the hidden attribute */
-.nav-mobile[hidden]{
-  display: none !important;
+/* Make sure nav row can anchor absolute dropdown */
+.nav .row{
+  position: relative;
 }
 
-/* Button styling */
+/* Button styling (keeps your nice box) */
 .nav-toggle{
   appearance: none;
   border: 1px solid var(--line);
@@ -1237,7 +1220,7 @@ html{ scroll-behavior: smooth; }
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile dropdown panel */
+/* Mobile dropdown panel (base styles) */
 .nav-mobile{
   position: absolute;
   right: 18px;
@@ -1250,9 +1233,18 @@ html{ scroll-behavior: smooth; }
   backdrop-filter: blur(10px);
   box-shadow: 0 16px 40px rgba(0,0,0,0.35);
   z-index: 999;
+
+  /* Animation setup */
+  transform: translateY(-8px) scale(0.98);
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: top right;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
 }
 
-/* Mobile links */
+/* Links */
 .nav-mobile a{
   display: block;
   padding: 10px 10px;
@@ -1270,9 +1262,16 @@ html{ scroll-behavior: smooth; }
   border-top: 1px solid rgba(255,255,255,0.10);
 }
 
-/* Make sure nav row can anchor absolute dropdown */
-.nav .row{
-  position: relative;
+/* IMPORTANT: respect hidden (JS controls this) */
+.nav-mobile[hidden]{
+  display: none !important;
+}
+
+/* When open (driven by the button state) */
+.nav-toggle[aria-expanded="true"] + .nav-mobile{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
 }
 
 /* Mobile breakpoint: hide desktop nav, show hamburger */
@@ -1281,14 +1280,12 @@ html{ scroll-behavior: smooth; }
   .ctas{
     display: none;
   }
+
   .nav-toggle{
     display: inline-flex;
     align-items: center;
     justify-content: center;
     margin-left: auto;
-  }
-  .nav-mobile{
-    display: block;
   }
 }
 @media (max-width: 960px){
