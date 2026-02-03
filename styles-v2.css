@@ -1296,3 +1296,39 @@ html{ scroll-behavior: smooth; }
     max-height: 380px; /* keeps it readable without dominating */
   }
 }
+/* ============================
+   INSIGHTS HERO – MOBILE FIX
+   ============================ */
+
+/* Make sure the Insights hero collapses to 1 column on mobile */
+@media (max-width: 960px){
+  .insights-hero .page-hero-grid{
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* Put the image panel BELOW the text */
+  .insights-hero .page-hero-media{
+    order: 2;
+  }
+  .insights-hero .page-hero-copy{
+    order: 1;
+  }
+
+  /* Prevent the infographic from shrinking into a tiny box */
+  .insights-hero .page-hero-media.infographic{
+    padding: 12px;
+  }
+  .insights-hero .page-hero-media.infographic img{
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .insights-hero .hero-caption{
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
