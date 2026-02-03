@@ -1170,10 +1170,31 @@ html{ scroll-behavior: smooth; }
    MOBILE NAV (HAMBURGER)
    ============================ */
 
-/* Default: hide mobile controls on desktop */
-.nav-toggle,
-.nav-mobile{
-  display: none;
+/* Mobile breakpoint */
+@media (max-width: 960px){
+  .navlinks,
+  .ctas{
+    display: none;
+  }
+
+  .nav-toggle{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
+  /* IMPORTANT:
+     Do NOT force nav-mobile to display:block.
+     The [hidden] attribute controls visibility. */
+  .nav-mobile{
+    display: block;
+  }
+}
+
+/* Honor the hidden attribute */
+.nav-mobile[hidden]{
+  display: none !important;
 }
 
 /* Button styling */
@@ -1278,5 +1299,3 @@ html{ scroll-behavior: smooth; }
     max-height: 380px; /* keeps it readable without dominating */
   }
 }
-.nav-toggle { outline: 3px solid lime !important; }
-.nav-toggle .hamburger span { outline: 2px solid magenta !important; }
