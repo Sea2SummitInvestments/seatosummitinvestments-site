@@ -1156,7 +1156,6 @@ html{ scroll-behavior: smooth; }
   opacity: var(--photo-opacity);
   filter: var(--photo-filter);
 }
-
 /* Optional: subtle top fade (matches your section fade) */
 .hero.bg-photo::after{
   content:"";
@@ -1166,6 +1165,7 @@ html{ scroll-behavior: smooth; }
   z-index:-1;
   pointer-events:none;
   background: linear-gradient(180deg, rgba(11,18,32,1), rgba(11,18,32,0));
+}
 /* ============================
    MOBILE NAV (HAMBURGER)
    ============================ */
