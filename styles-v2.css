@@ -1332,3 +1332,18 @@ html{ scroll-behavior: smooth; }
     line-height: 1.5;
   }
 }
+/* ============================
+   INDEX HERO – REMOVE BOTTOM REFLECTION
+   ============================ */
+
+/* Remove any bottom fade / reflection on index hero media */
+.hero .hero-media::after,
+.hero .hero-media::before{
+  content: none !important;
+}
+
+/* If a gradient overlay is applied directly */
+.hero .hero-media{
+  mask-image: none !important;
+  -webkit-mask-image: none !important;
+}
