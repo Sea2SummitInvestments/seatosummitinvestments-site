@@ -3,156 +3,380 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>About | Sea to Summit Investments</title>
-  <meta name="description" content="About Sea to Summit Investments" />
-
-  <!-- Favicons -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <title>Portfolio | Sea to Summit Investments</title>
+  <meta name="description" content="Explore Sea to Summit Investments' multifamily acquisition partnerships, direct real estate ownership experience, active investments, and realized investments." />
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#0b6f82">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="styles-v2.css" />
-
   <style>
-    .page-title { padding: 28px 0 10px; }
-    .subtle { color: var(--muted); }
-  <style>
-
-    .page-title { padding: 56px 0 28px; } /* more breathing room */
-    .subtle { color: var(--muted); }
-
-    .tag{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 6px 10px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-      border-radius: 999px;
-      font-size: 12px;
-      color: var(--muted);
+    /* Portfolio-specific presentation; styles-v2.css and other pages are unchanged. */
+    .portfolio-page .subtle { color: var(--muted, #adb9c9); }
+    .portfolio-page .page-hero-grid { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); gap:24px; align-items:stretch; }
+    .portfolio-page .page-hero-copy { min-width:0; padding:clamp(24px,3.3vw,38px); border:1px solid var(--line,rgba(255,255,255,.15)); border-radius:var(--radius,16px); background:rgba(19,29,47,.83); box-shadow:var(--shadow,0 16px 42px rgba(0,0,0,.17)); }
+    .portfolio-page .page-hero-copy h1 { margin:16px 0 12px; }
+    .portfolio-page .page-hero-copy p { margin-top:14px; }
+    .portfolio-page .page-hero-media { min-width:0; overflow:hidden; border:1px solid var(--line,rgba(255,255,255,.15)); border-radius:var(--radius,16px); box-shadow:var(--shadow,0 16px 42px rgba(0,0,0,.17)); }
+    .portfolio-page .page-hero-media img { height:auto; min-height:0; object-fit:contain; }
+    .portfolio-page .portfolio-jumps { display:flex; flex-wrap:wrap; gap:8px; margin-top:23px; }
+    .portfolio-page .portfolio-jumps a { display:inline-flex; align-items:center; min-height:35px; text-decoration:none; padding:7px 12px; border-radius:999px; border:1px solid var(--line,rgba(255,255,255,.17)); background:rgba(255,255,255,.045); color:var(--text,#e9f0f7); font-size:12px; transition:background .2s,border-color .2s; }
+    .portfolio-page .portfolio-jumps a:hover { background:rgba(45,212,191,.12); border-color:rgba(45,212,191,.42); }
+    .portfolio-page .disclaimer { font-size:12px; font-style:italic; opacity:.78; margin-top:16px; line-height:1.6; }
+    .portfolio-page .portfolio-eyebrow { display:inline-flex; align-items:center; gap:8px; color:#a9dfdd; font-size:11px; font-weight:700; letter-spacing:.11em; text-transform:uppercase; }
+    .portfolio-page .portfolio-eyebrow::before { content:""; width:7px; height:7px; border-radius:50%; background:#39c6b3; box-shadow:0 0 0 4px rgba(57,198,179,.11); }
+    .portfolio-page .acquisition-art { position:relative; isolation:isolate; min-height:390px; height:100%; display:flex; flex-direction:column; justify-content:space-between; padding:30px; color:#edf9fc; background:radial-gradient(90% 80% at 85% 0%,rgba(45,212,191,.21),transparent 68%),radial-gradient(100% 90% at 0% 100%,rgba(49,104,157,.28),transparent 68%),linear-gradient(145deg,#172d3d,#102334 50%,#0c1d2d); }
+    .portfolio-page .acquisition-art::after { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(160deg,transparent 45%,rgba(45,212,191,.11)); }
+    .portfolio-page .acquisition-art .art-overline { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.17em; color:#9ddbd8; }
+    .portfolio-page .acquisition-art .art-address { font-size:clamp(30px,3.8vw,49px); line-height:1.02; letter-spacing:-.035em; font-weight:800; margin:0 0 8px; }
+    .portfolio-page .acquisition-art .art-detail { color:#c9dce5; font-size:14px; }
+    .portfolio-page .acquisition-art .art-building { display:none; }
+    .portfolio-page .portfolio-section { padding-top:57px; padding-bottom:54px; }
+    .portfolio-page .section-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:15px; flex-wrap:wrap; margin-bottom:18px; }
+    .portfolio-page .section-heading h2 { margin:5px 0 0; }
+    .portfolio-page .section-heading p { margin:7px 0 0; max-width:72ch; }
+    .portfolio-page .portfolio-summary .card { height:100%; }
+    .portfolio-page .portfolio-summary .card h3 { margin-top:0; }
+    .portfolio-page .portfolio-summary .card p { margin:10px 0 0; }
+    .portfolio-page .summary-kicker { font-size:11px; letter-spacing:.09em; text-transform:uppercase; color:#81d6d1; font-weight:700; }
+    .portfolio-page .featured { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); gap:25px; padding:clamp(24px,3.4vw,38px); border:1px solid rgba(85,184,187,.31); border-radius:var(--radius,16px); background:linear-gradient(125deg,rgba(30,57,70,.68),rgba(21,31,48,.92) 54%,rgba(18,38,50,.8)); box-shadow:var(--shadow,0 15px 34px rgba(0,0,0,.16)); }
+    .portfolio-page .featured h3 { font-size:clamp(24px,3vw,34px); line-height:1.18; margin:12px 0 7px; }
+    .portfolio-page .featured p { line-height:1.72; }
+    .portfolio-page .featured .featured-location { margin-top:0; font-size:14px; }
+    .portfolio-page .asset-meta { display:flex; gap:7px; flex-wrap:wrap; margin:12px 0; }
+    .portfolio-page .asset-tag { display:inline-flex; align-items:center; font-size:11px; line-height:1.4; padding:5px 9px; border-radius:999px; border:1px solid var(--line,rgba(255,255,255,.15)); background:rgba(255,255,255,.055); color:var(--muted,#b9c3d0); }
+    .portfolio-page .asset-tag.accent { border-color:rgba(45,212,191,.4); background:rgba(45,212,191,.09); color:#a1e9e4; }
+    .portfolio-page .featured-facts { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:22px; }
+    .portfolio-page .fact { padding:15px 13px; border:1px solid rgba(255,255,255,.13); border-radius:12px; background:rgba(0,0,0,.11); }
+    .portfolio-page .fact strong { display:block; font-size:20px; line-height:1.25; color:#e9f6f8; }
+    .portfolio-page .fact span { display:block; font-size:11px; color:var(--muted,#aebaca); margin-top:6px; }
+    .portfolio-page .featured-side { align-self:stretch; display:flex; flex-direction:column; justify-content:center; gap:16px; min-width:0; }
+    .portfolio-page .featured-quote { padding:22px; border-radius:14px; border:1px solid rgba(255,255,255,.13); background:rgba(255,255,255,.045); }
+    .portfolio-page .featured-quote .quote-label { color:#81d6d1; font-size:11px; text-transform:uppercase; letter-spacing:.1em; font-weight:700; }
+    .portfolio-page .featured-quote p { margin:9px 0 0; font-size:15px; line-height:1.7; }
+    .portfolio-page .featured-side .btn { align-self:flex-start; }
+    .portfolio-page .asset-grid { margin-top:17px; }
+    .portfolio-page .asset-card { height:100%; }
+    .portfolio-page .asset-card img { display:block; width:100%; aspect-ratio:16 / 9; height:auto; object-fit:cover; border-radius:14px; border:1px solid var(--line,rgba(255,255,255,.15)); margin-bottom:12px; background:rgba(255,255,255,.03); }
+    .portfolio-page .asset-card h3 { margin:9px 0 4px; }
+    .portfolio-page .asset-loc { font-size:13px; color:var(--muted,#aab8c9); }
+    .portfolio-page .asset-card p { margin-top:10px; line-height:1.65; }
+    .portfolio-page .opportunity-panel { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(190px,.55fr); align-items:center; gap:25px; padding:30px; border:1px solid rgba(45,212,191,.24); border-radius:var(--radius,16px); background:linear-gradient(110deg,rgba(24,47,60,.72),rgba(19,31,48,.94)); }
+    .portfolio-page .opportunity-panel h2 { margin:8px 0 11px; }
+    .portfolio-page .opportunity-panel p { margin:0; max-width:70ch; line-height:1.7; }
+    .portfolio-page .opportunity-actions { display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
+    .portfolio-page .opportunity-actions .subtle { font-size:12px; }
+    .portfolio-page .portfolio-note { margin-top:22px; font-size:12px; line-height:1.6; font-style:italic; opacity:.85; }
+    @media(max-width:960px) {
+      .portfolio-page .page-hero-grid, .portfolio-page .featured, .portfolio-page .opportunity-panel { grid-template-columns:1fr; }
+      .portfolio-page .acquisition-art { min-height:300px; }
+      .portfolio-page .featured-facts { grid-template-columns:repeat(3,minmax(0,1fr)); }
+      .portfolio-page .portfolio-section { padding-top:38px; padding-bottom:38px; }
     }
-    .pillrow{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
-
-    /* Asset cards */
-    .asset-grid{ margin-top:14px; }
-    .asset-card img{
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      margin-bottom: 12px;
-      background: rgba(255,255,255,0.03);
+    @media(max-width:520px) {
+      .portfolio-page .page-hero-copy, .portfolio-page .acquisition-art { padding:22px; }
+      .portfolio-page .featured { padding:22px; }
+      .portfolio-page .featured-facts { grid-template-columns:1fr 1fr; }
+      .portfolio-page .fact:last-child { grid-column:1 / -1; }
+      .portfolio-page .opportunity-panel { padding:22px; }
     }
-.page-hero-grid{
-  display:grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 24px;
-  align-items: stretch;
-}
 
-.page-hero-copy{
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: rgba(255,255,255,0.04);
-  box-shadow: var(--shadow);
-  padding: 34px; /* was effectively tighter before */
-}
 
-.page-hero-copy h1{ margin-top: 16px; }
-.page-hero-copy p{ margin-top: 14px; }
+    /* FINAL PORTFOLIO REFINEMENTS — local to portfolio-v2.html only. */
+    .portfolio-page .section-heading,
+    .portfolio-page .section-heading > div { width:100%; max-width:none; min-width:0; }
+    .portfolio-page .section-heading p,
+    .portfolio-page .section-heading .subtle { width:100%; max-width:none; overflow:visible; text-overflow:clip; white-space:normal; }
+    .portfolio-page .section-heading h2 {
+      font-size:clamp(31px,3vw,39px); line-height:1.14; font-weight:750;
+      letter-spacing:-.025em; margin:8px 0 12px; color:var(--text);
+    }
+    .portfolio-page .section-heading { margin-bottom:24px; align-items:start; }
+    .portfolio-page .section-heading p { font-size:17px; line-height:1.6; }
+    .portfolio-page .portfolio-summary h3 { font-size:20px; line-height:1.28; }
+    .portfolio-page .asset-card h3 { font-size:20px; line-height:1.25; }
+    .portfolio-page .portfolio-section { padding-top:68px; padding-bottom:66px; }
+    .portfolio-page .portfolio-section .section-heading h2 { margin-top:8px; }
+    .portfolio-page .portfolio-top-band .page-hero-copy h1 { font-size:clamp(30px,3.1vw,41px); line-height:1.14; }
+    .portfolio-page .portfolio-top-band .page-hero-copy { display:flex; flex-direction:column; justify-content:center; }
+    .portfolio-page .portfolio-top-band .page-hero-copy > p:first-of-type { font-size:16px; line-height:1.7; }
 
-.page-hero-media{
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow:hidden;
-  background: rgba(255,255,255,0.03);
-  box-shadow: var(--shadow);
-  display:flex;
-  flex-direction:column;
-}
-.page-hero-media img{
-  width:100%;
-  height:100%;
-  min-height: 360px;
-  object-fit: cover;
-  display:block;
-}
+    /* Section navigation: obvious links, four even columns on desktop. */
+    .portfolio-page .portfolio-jumps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:10px; margin:24px 0 0; }
+    .portfolio-page .portfolio-jumps a { display:flex; align-items:center; justify-content:space-between;
+      gap:8px; min-width:0; min-height:60px; padding:13px 13px; border-radius:12px;
+      background:linear-gradient(135deg,rgba(32,64,78,.8),rgba(23,39,60,.86));
+      border:1px solid rgba(94,201,201,.35); box-shadow:0 5px 16px rgba(0,0,0,.17);
+      color:rgba(237,253,254,.95); font-size:13px; font-weight:650; line-height:1.25;
+      text-decoration:none; transition:transform .15s,background .15s,border-color .15s; }
+    .portfolio-page .portfolio-jumps a:hover,
+    .portfolio-page .portfolio-jumps a:focus-visible { border-color:#76ddd6;
+      background:linear-gradient(135deg,rgba(39,94,106,.95),rgba(32,65,87,.95));
+      transform:translateY(-2px); outline-offset:3px; }
+    .portfolio-page .portfolio-jumps a .jump-arrow { font-size:18px; color:#80e3dc; flex:0 0 auto; }
+    .portfolio-page .portfolio-jumps .jump-index { display:block; font-size:10px; letter-spacing:.1em;
+      color:#88d5d0; text-transform:uppercase; margin-bottom:4px; }
 
-.media-caption{
-  padding: 14px 16px;
-  text-align: center;         /* center it */
-  font-weight: 700;           /* bold */
-  color: var(--accent);       /* teal brand color */
-  border-top: 1px solid var(--line);
-  background: rgba(0,0,0,0.18);
-}
+    /* Feature visual can immediately display an actual building photo.
+       Save it as assets/445-south-e-street.jpg. Until then, the gradient is intentional. */
+    .portfolio-page .acquisition-art { background:
+       linear-gradient(180deg,rgba(10,28,42,.12) 0%,rgba(9,22,35,.32) 42%,rgba(7,20,34,.91) 100%),
+       url('assets/445-south-e-street.jpg') center/cover no-repeat,
+       linear-gradient(145deg,#234957,#102334 60%,#0c1d2d);
+      padding:clamp(22px,2.4vw,34px); min-height:390px;
+      justify-content:space-between; }
+    .portfolio-page .acquisition-art::after { background:linear-gradient(105deg,rgba(7,22,35,.26),transparent 70%); }
+    .portfolio-page .acquisition-art .art-address { font-size:clamp(25px,2.5vw,32px);
+      line-height:1.18; white-space:nowrap; margin:0 0 7px; }
+    .portfolio-page .acquisition-art .art-detail { font-size:13px; line-height:1.55; }
+    .portfolio-page .acquisition-art .art-overline { font-size:10px; line-height:1.5; }
+    .portfolio-page .acquisition-art .art-building { width:min(88%,310px); height:120px;
+      margin:auto; opacity:.48; filter:drop-shadow(0 6px 24px rgba(0,0,0,.35)); }
 
-.disclaimer{
-  font-size: 12px;
-  font-style: italic;
-  opacity: 0.75;
-  margin-top: 14px;
-}
+    /* Calm, intentional section rhythm instead of repeating the standard fade. */
+    .portfolio-page #featured::before { background:linear-gradient(130deg,#0e1b2c 0%,#11273a 65%,#10202f 100%); }
+    .portfolio-page #active::before { background:
+      radial-gradient(850px 440px at 91% 28%,rgba(45,212,191,.10),transparent 72%),
+      linear-gradient(155deg,#0c1728,#111e30 62%,#0d1b2c); }
+    .portfolio-page .portfolio-landscape-band { position:relative; isolation:isolate;
+      background:
+       linear-gradient(180deg,rgba(10,19,32,.96) 0%,rgba(10,25,37,.83) 34%,rgba(9,22,35,.82) 65%,rgba(10,19,32,.97) 100%),
+       url('assets/portfolio-secondary-bg.jpg') center/cover no-repeat,
+       #102334; }
+    .portfolio-page .portfolio-landscape-band .section { background:transparent; }
+    .portfolio-page .portfolio-landscape-band .section::before { content:none; }
+    .portfolio-page .portfolio-landscape-band .section + .section { border-top:1px solid rgba(255,255,255,.09); }
+    .portfolio-page .portfolio-landscape-band .asset-card { background:rgba(16,27,43,.78); backdrop-filter:blur(5px); }
+    .portfolio-page .portfolio-landscape-band .opportunity-panel { background:linear-gradient(110deg,rgba(16,45,56,.86),rgba(13,29,47,.89)); }
+    .portfolio-page .portfolio-top-band .section-heading { margin-top:0; }
+    .portfolio-page .portfolio-top-band .section-divider { margin:38px 0; }
 
-@media (max-width: 960px){
-  .page-hero-grid{ grid-template-columns: 1fr; }
-  .page-hero-copy{ padding: 26px; }
-  .page-hero-media img{ min-height: 220px; }
-}
-    .asset-meta{
+    /* Paragon receives its own distinct image reference; the branded illustration
+       remains visible until assets/first-paragon-apartments.jpg is supplied. */
+    .portfolio-page .paragon-visual { position:relative; display:block; overflow:hidden;
+      width:100%; aspect-ratio:16/9; margin-bottom:12px; border-radius:14px;
+      border:1px solid rgba(255,255,255,.16); background:linear-gradient(125deg,#193b4a,#214957 55%,#14293b); }
+    .portfolio-page .paragon-visual img { position:absolute; inset:0; z-index:2;
+      width:100%; height:100%; aspect-ratio:auto; margin:0; object-fit:cover; }
+    .portfolio-page .paragon-visual svg { display:block; position:absolute; inset:0;
+      width:100%; height:100%; }
+
+    @media(min-width:961px) {
+      .portfolio-page .portfolio-jumps a { white-space:nowrap; }
+      .portfolio-page .portfolio-top-band .page-hero-grid { grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); }
+    }
+    @media(max-width:960px) {
+      .portfolio-page .portfolio-jumps { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .portfolio-page .portfolio-top-band .page-hero-grid { grid-template-columns:1fr; }
+      .portfolio-page .portfolio-section { padding-top:48px; padding-bottom:50px; }
+    }
+    @media(max-width:520px) {
+      .portfolio-page .portfolio-jumps a { min-height:64px; font-size:12px; padding:12px; white-space:normal; }
+      .portfolio-page .section-heading h2 { font-size:30px; }
+      .portfolio-page .section-heading p { font-size:16px; }
+      .portfolio-page .acquisition-art .art-address { font-size:clamp(22px,6.3vw,29px); }
+    }
+    .portfolio-page [id="featured"], .portfolio-page [id="active"],
+    .portfolio-page [id="realized"], .portfolio-page [id="opportunities"] { scroll-margin-top:92px; }
+
+    /* OCTOBER FINAL PASS — all selectors are isolated to the Portfolio page. */
+
+    /* Compact, content-sized hero kicker; restore the four-point star motif. */
+    .portfolio-page .page-hero-copy > .kicker {
+      align-self:flex-start;
+      width:max-content;
+      max-width:100%;
+      display:inline-flex;
+      gap:9px;
+      align-items:center;
+      padding:7px 12px;
+      white-space:normal;
+    }
+    .portfolio-page .page-hero-copy > .kicker svg { flex:0 0 16px; }
+
+    /* Clear, centered navigation: all four links fit one row on desktop. */
+    .portfolio-page .portfolio-jumps a {
+      position:relative;
+      justify-content:center;
+      text-align:center;
+      min-height:62px;
+      padding:13px 28px 13px 18px;
+      font-size:14px;
+      font-weight:700;
+      line-height:1.25;
+    }
+    .portfolio-page .portfolio-jumps .jump-label { flex:1 1 auto; text-align:center; }
+    .portfolio-page .portfolio-jumps .jump-arrow {
+      position:absolute; right:12px; top:50%; transform:translateY(-50%);
+      font-size:17px;
+    }
+
+    /* Match Market's restrained white section headers (~26px), not oversized 39px. */
+    .portfolio-page .section-heading h2,
+    .portfolio-page .portfolio-section .section-heading h2 {
+      font-size:clamp(25px,2.1vw,28px);
+      line-height:1.23;
+      letter-spacing:-.3px;
+      font-weight:750;
+      margin:10px 0 12px;
+    }
+    /* More visible teal hierarchy, with air before the white headline. */
+    .portfolio-page .portfolio-eyebrow {
+      font-size:13.5px;
+      letter-spacing:.09em;
+      line-height:1.35;
+    }
+    .portfolio-page .summary-kicker {
+      font-size:13px;
+      letter-spacing:.085em;
+      line-height:1.4;
+    }
+    .portfolio-page .portfolio-summary .card h3 {
+      margin-top:12px;
+      margin-bottom:14px;
+      font-size:20px;
+      line-height:1.28;
+    }
+    /* Easy-to-scan property list; existing summary narrative untouched. */
+    .portfolio-page .portfolio-summary .summary-assets {
+      margin:0;
+      padding-left:20px;
+      color:var(--text);
+      list-style:disc;
+      font-size:15px;
+      line-height:1.6;
+    }
+    .portfolio-page .portfolio-summary .summary-assets li { padding-left:2px; margin:5px 0; }
+    .portfolio-page .portfolio-summary .summary-assets li::marker { color:#74d8d2; }
+    .portfolio-page .portfolio-summary .summary-location { color:var(--muted); }
+    .portfolio-page .portfolio-summary .card > p.subtle { margin-top:18px; }
+
+    /* Shared photo occupies Other Active + Fully Realized, slightly brighter. */
+    .portfolio-page .portfolio-landscape-band {
+      background:
+        linear-gradient(180deg,
+          rgba(10,19,32,.86) 0%,
+          rgba(10,25,37,.64) 31%,
+          rgba(9,22,35,.61) 66%,
+          rgba(10,19,32,.88) 100%),
+        url('assets/portfolio-secondary-bg.jpg') center/cover no-repeat,
+        #102334;
+    }
+    .portfolio-page #active::before { content:none; }
+    .portfolio-page .portfolio-landscape-band .asset-card { background:rgba(16,27,43,.82); }
+
+    /* Future Opportunities is deliberately open instead of another card. */
+    .portfolio-page #opportunities {
+      padding-top:76px;
+      padding-bottom:75px;
+    }
+    .portfolio-page #opportunities::before {
+      background:
+        radial-gradient(720px 340px at 90% 25%,rgba(45,212,191,.10),transparent 70%),
+        linear-gradient(125deg,#0d1828,#122334 63%,#0d1b2c);
+    }
+    .portfolio-page #opportunities .opportunity-panel {
+      padding:0;
+      border:0;
+      border-radius:0;
+      box-shadow:none;
+      background:none;
+      gap:30px;
+    }
+    .portfolio-page #opportunities .opportunity-panel h2 {
+      font-size:clamp(25px,2.1vw,28px);
+      line-height:1.25;
+      font-weight:750;
+      letter-spacing:-.3px;
+      margin:11px 0 13px;
+    }
+    .portfolio-page #opportunities .opportunity-panel p { font-size:16px; }
+    .portfolio-page #opportunities .opportunity-actions { align-items:flex-start; }
+    .portfolio-page #opportunities .portfolio-note { margin-top:32px; }
+
+    @media(max-width:960px) {
+      .portfolio-page .portfolio-jumps a { font-size:13px; }
+      .portfolio-page #opportunities { padding-top:56px; padding-bottom:55px; }
+    }
+    @media(max-width:520px) {
+      .portfolio-page .portfolio-jumps a { font-size:12.5px; padding:12px 23px 12px 10px; }
+      .portfolio-page .portfolio-jumps .jump-arrow { right:8px; }
+      .portfolio-page .page-hero-copy > .kicker { font-size:12px; }
+    }
+
+    /* DEPLOYMENT POLISH — scoped to this page only. */
+    /* Match the quieter scale of the Market hero. */
+    .portfolio-page .portfolio-top-band .page-hero-copy h1 {
+      font-size:clamp(30px,2.5vw,35px);
+      line-height:1.13;
+      letter-spacing:-.45px;
+    }
+    /* Keep centered link text AND the teal identifying line. */
+    .portfolio-page .portfolio-jumps a {
+      min-height:76px;
+      padding:13px 27px 13px 17px;
+    }
+    .portfolio-page .portfolio-jumps .jump-label {
       display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin: 8px 0 10px;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      gap:5px;
+      text-align:center;
+      width:100%;
     }
-    .asset-tag{
-      font-size: 12px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.04);
-      color: var(--muted);
+    .portfolio-page .portfolio-jumps .jump-kicker {
+      display:block;
+      color:#8de3dc;
+      font-size:11px;
+      font-weight:750;
+      line-height:1.25;
+      letter-spacing:.075em;
+      text-transform:uppercase;
+      white-space:normal;
     }
-    .asset-loc{ font-size: 13px; color: var(--muted); margin-top: -2px; }
-
+    .portfolio-page .portfolio-jumps .jump-title {
+      display:block;
+      color:#f4f8fa;
+      font-size:14px;
+      font-weight:750;
+      line-height:1.3;
+      white-space:normal;
+    }
+    /* The shared stylesheet adds a 20px top margin to .footer;
+       remove just here so its thin border sits on the color transition. */
+    .portfolio-page .footer { margin-top:0; }
+    @media (max-width:520px) {
+      .portfolio-page .portfolio-jumps a { min-height:80px; padding:12px 23px 12px 9px; }
+      .portfolio-page .portfolio-jumps .jump-kicker { font-size:9.5px; letter-spacing:.04em; }
+      .portfolio-page .portfolio-jumps .jump-title { font-size:12px; }
+    }
   </style>
   <script src="nav.js" defer></script>
 </head>
-<body>
-  <!-- NAV -->
+<body class="portfolio-page">
+  <!-- Original site navigation retained -->
   <div class="nav">
     <div class="container">
       <div class="row">
         <a class="brand" href="index.html" aria-label="Sea to Summit Investments home">
           <img src="assets/logo.jpg" alt="Sea to Summit Investments" class="brand-logo">
         </a>
-
-        <!-- DESKTOP NAV -->
         <div class="navlinks" aria-label="Primary">
           <a href="index.html">Home</a>
           <a href="approach-v2.html">Our Approach</a>
-          <a href="portfolio-v2.html">Portfolio</a>
+          <a href="portfolio-v2.html" aria-current="page">Portfolio</a>
           <a href="market-v2.html">Market</a>
           <a href="insights-v2.html">Insights</a>
           <a href="about-v2.html">About</a>
           <a href="contact-v2.html">Contact</a>
         </div>
-
-        <!-- MOBILE MENU BUTTON -->
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
-          <span class="hamburger" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
+          <span class="hamburger" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
-
-        <!-- MOBILE DROPDOWN -->
         <div id="mobileNav" class="nav-mobile" hidden>
           <a href="index.html">Home</a>
           <a href="approach-v2.html">Our Approach</a>
@@ -161,248 +385,292 @@
           <a href="insights-v2.html">Insights</a>
           <a href="about-v2.html">About</a>
           <a href="contact-v2.html">Contact</a>
+          <div class="nav-mobile-cta"><a class="btn primary" href="contact-v2.html">Join Investor List</a></div>
+        </div>
+        <div class="ctas"><a class="btn primary" href="contact-v2.html">Join Investor List</a></div>
+      </div>
+    </div>
+  </div>
 
-          <div class="nav-mobile-cta">
+  <main>
+    <!-- Photo background groups the portfolio introduction and snapshot. -->
+    <section class="section bg-photo portfolio-top-band" style="--photo-url:url('assets/Portfolio-bg-photo.jpg');--photo-pos:center;">
+      <div class="container">
+        <div class="page-hero-grid">
+          <div class="page-hero-copy">
+            <div class="kicker">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+              <span>Stewardship &bull; Ownership &bull; Long-Term Alignment</span>
+            </div>
+            <h1>Real Estate Portfolio</h1>
+            <p class="subtle">A portfolio reflecting Sea to Summit's multifamily acquisition partnerships and the direct ownership, management, and passive investment experience of its principal, with investments dating back to 2009.</p>
+            <div class="hero-actions" style="margin-top:23px;">
+              <a class="btn" href="#featured">View Recent Acquisition</a>
+              <a class="btn primary" href="contact-v2.html">Join Investor List</a>
+            </div>
+            <p class="subtle disclaimer">Portfolio includes investments held through different entities and partnerships, with varying ownership and management roles. Information is for general background only and is not an offer to sell securities.</p>
+          </div>
+          <div class="page-hero-media">
+            <div class="acquisition-art" role="img" aria-label="Graphic celebrating the acquisition of 445 South E Street, a 19-unit apartment property in Santa Rosa, California">
+              <div class="art-overline">Recent multifamily acquisition &bull; September 2026</div>
+              <svg class="art-building" viewBox="0 0 460 185" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M16 160H444" stroke="#82cfc9" stroke-width="1.5" opacity=".65"/>
+                <path d="M32 160V75L92 37H225V160M225 160V59L285 27H419V160" stroke="#82cfc9" stroke-width="2.2" opacity=".85" stroke-linejoin="round"/>
+                <path d="M40 75H225M230 59H418M92 37V160M285 27V160" stroke="#82cfc9" stroke-width="1.2" opacity=".40"/>
+                <path d="M58 93H78V119H58V93ZM107 93H127V119H107V93ZM155 93H175V119H155V93ZM58 133H78V153H58V133ZM107 133H127V153H107V133ZM155 133H175V153H155V133ZM247 78H270V105H247V78ZM298 78H321V105H298V78ZM349 78H372V105H349V78ZM247 120H270V147H247V120ZM298 120H321V147H298V120ZM349 120H372V147H349V120Z" stroke="#7bd2cb" stroke-width="1.5" opacity=".7"/>
+                <path d="M20 166H440" stroke="#c6f2ed" stroke-width="1" opacity=".33"/>
+              </svg>
+              <div>
+                <h2 class="art-address">445 South E Street</h2>
+                <div class="art-detail">19 apartments &nbsp;&bull;&nbsp; Santa Rosa, California</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="portfolio-jumps" aria-label="Explore portfolio sections">
+          <a href="#featured"><span class="jump-label"><span class="jump-kicker">New Acquisition</span><span class="jump-title">445 South E Street</span></span><span class="jump-arrow" aria-hidden="true">↗</span></a>
+          <a href="#active"><span class="jump-label"><span class="jump-kicker">Current Holdings</span><span class="jump-title">7 Active Investments</span></span><span class="jump-arrow" aria-hidden="true">↗</span></a>
+          <a href="#realized"><span class="jump-label"><span class="jump-kicker">Completed</span><span class="jump-title">2 Realized Investments</span></span><span class="jump-arrow" aria-hidden="true">↗</span></a>
+          <a href="#opportunities"><span class="jump-label"><span class="jump-kicker">Looking Ahead</span><span class="jump-title">Future Opportunities</span></span><span class="jump-arrow" aria-hidden="true">↗</span></a>
+        </nav>
+        <div class="section-divider"></div>
+        <div class="section-heading">
+          <div>
+            <div class="portfolio-eyebrow">Portfolio overview</div>
+            <h2>Experience Across Multiple Investment Roles</h2>
+            <p class="subtle">The portfolio combines active acquisition and operating partnerships, principal-owned properties and long-standing limited partner investments.</p>
+          </div>
+        </div>
+        <div class="grid3 portfolio-summary">
+          <div class="card">
+            <div class="summary-kicker">Acquisition &amp; ownership</div>
+            <h3>Principal-Led Real Estate</h3>
+            <ul class="summary-assets">
+              <li>445 South E Street <span class="summary-location">&bull; Santa Rosa, CA</span></li>
+              <li>Mid-Rise Condo <span class="summary-location">&bull; San Diego, CA</span></li>
+              <li>Single-Family Home <span class="summary-location">&bull; Arvada, CO</span></li>
+            </ul>
+            <p class="subtle">Multifamily investment partnership and personally owned residential assets. Includes historical ownership preceding the formation of Sea to Summit Investments.</p>
+          </div>
+          <div class="card">
+            <div class="summary-kicker">Passive investment</div>
+            <h3>Multifamily &amp; Commercial LP</h3>
+            <ul class="summary-assets">
+              <li>Park Crest Townhomes <span class="summary-location">&bull; Vancouver, WA</span></li>
+              <li>West Main at the Park <span class="summary-location">&bull; Hillsboro, OR</span></li>
+              <li>First Paragon Apartments <span class="summary-location">&bull; Fort Collins, CO</span></li>
+              <li>Curtis Blvd <span class="summary-location">&bull; Eastlake, OH</span></li>
+            </ul>
+            <p class="subtle">Limited-partner participation across multiple properties and investment strategies.</p>
+          </div>
+          <div class="card">
+            <div class="summary-kicker">Completed investments</div>
+            <h3>Realized Ownership &amp; LP</h3>
+            <ul class="summary-assets">
+              <li>Idyllic Idyllwild Cabin <span class="summary-location">&bull; Idyllwild, CA</span></li>
+              <li>Niles Colfax <span class="summary-location">&bull; South Bend, IN</span></li>
+            </ul>
+            <p class="subtle">Completed investment lifecycles spanning direct property ownership and a commercial LP investment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section portfolio-section" id="featured">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="portfolio-eyebrow">Featured acquisition</div>
+            <h2>445 South E Street</h2>
+            <p class="subtle">A milestone multifamily acquisition for Sea to Summit Investments and its operating partners.</p>
+          </div>
+        </div>
+        <article class="featured">
+          <div>
+            <div class="portfolio-eyebrow">Acquired September 2026</div>
+            <h3>South E Street Apartments</h3>
+            <p class="subtle featured-location">445 South E Street &bull; Santa Rosa, California</p>
+            <div class="asset-meta">
+              <span class="asset-tag accent">Active Investment</span>
+              <span class="asset-tag">19-Unit Multifamily</span>
+              <span class="asset-tag">Acquisition &amp; Operating Partnership</span>
+            </div>
+            <!-- Secondary photo of 445 South E Street -->
+<div style="margin: 22px 0 24px;">
+  <img
+    src="assets/445-south-e-street-secondary.jpg"
+    alt="445 South E Street Apartments in Santa Rosa, California"
+    loading="lazy"
+    style="
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+    "
+  />
+</div>
+            <div class="featured-facts">
+              <div class="fact"><strong>19</strong><span>Apartment homes</span></div>
+              <div class="fact"><strong>2026</strong><span>Year acquired</span></div>
+              <div class="fact"><strong>Santa Rosa</strong><span>Sonoma County, CA</span></div>
+            </div>
+          </div>
+          <div class="featured-side">
+            <div class="featured-quote">
+              <div class="quote-label">Our role</div>
+              <p>Sea to Summit Investments and Dry Creek Investments share an ownership and management role through a jointly owned entity within the property partnership.</p>
+            </div>
+            <div class="featured-quote">
+              <div class="quote-label">Investment approach</div>
+              <p>The transaction reflects a disciplined approach to underwriting, property-level due diligence and commitment to a targeted return profile. The business plan emphasizes hands-on asset oversight, thoughtful property improvements and durable operations in a market where the team is building a long-term presence.</p>
+            </div>
+            <a class="btn primary" href="contact-v2.html">Connect With Our Team</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Shared landscape background spans Current Holdings and Completed Lifecycles only. -->
+    <div class="portfolio-landscape-band">
+    <section class="section portfolio-section" id="active">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="portfolio-eyebrow">Current holdings</div>
+            <h2>Other Active Investments</h2>
+            <p class="subtle">Six additional active investments, comprising principal-owned real estate and limited-partner interests. The featured Santa Rosa acquisition brings the active portfolio presented here to seven.</p>
+          </div>
+        </div>
+        <div class="grid3 asset-grid">
+          <article class="card asset-card">
+            <img src="assets/Eastlake OH.jpg" alt="Commercial investment in Eastlake, Ohio" loading="lazy">
+            <h3>Curtis Blvd &mdash; Commercial Asset</h3>
+            <div class="asset-loc">Eastlake, OH</div>
+            <div class="asset-meta"><span class="asset-tag">Active</span><span class="asset-tag">LP Investment</span><span class="asset-tag">Commercial</span></div>
+            <p class="subtle">Commercial LP investment with ongoing distributions. Acquired November 2015.</p>
+          </article>
+          <article class="card asset-card">
+            <img src="assets/Park Crest-WA.jpg" alt="Park Crest Townhomes in Vancouver, Washington" loading="lazy">
+            <h3>Park Crest Townhomes</h3>
+            <div class="asset-loc">Vancouver, WA</div>
+            <div class="asset-meta"><span class="asset-tag">Active</span><span class="asset-tag">LP Investment</span><span class="asset-tag">Multifamily</span></div>
+            <p class="subtle">Multifamily LP investment with ongoing distributions. Acquired July 2021.</p>
+          </article>
+          <article class="card asset-card">
+            <img src="assets/West Main-OR.jpg" alt="West Main at the Park multifamily investment in Hillsboro, Oregon" loading="lazy">
+            <h3>West Main at the Park</h3>
+            <div class="asset-loc">Hillsboro, OR</div>
+            <div class="asset-meta"><span class="asset-tag">Active</span><span class="asset-tag">LP Investment</span><span class="asset-tag">Multifamily</span></div>
+            <p class="subtle">Multifamily LP investment with ongoing distributions. Acquired December 2024.</p>
+          </article>
+          <article class="card asset-card">
+            <div class="paragon-visual" role="group" aria-label="First Paragon Apartments image area">
+              <svg viewBox="0 0 640 360" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+                <defs><linearGradient id="paragonSky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#356775"/><stop offset="1" stop-color="#142d40"/></linearGradient></defs>
+                <rect width="640" height="360" fill="url(#paragonSky)"/>
+                <path d="M0 257L118 200L178 231L291 162L370 223L488 156L640 233V360H0Z" fill="#142e3e" opacity=".75"/>
+                <g fill="#172e3d" stroke="#8ed6d1" stroke-width="3" stroke-opacity=".65">
+                  <rect x="93" y="111" width="182" height="176" rx="3"/><rect x="270" y="77" width="261" height="210" rx="3"/>
+                </g>
+                <g fill="#5cbdba" opacity=".78">
+                  <rect x="115" y="134" width="25" height="33"/><rect x="160" y="134" width="25" height="33"/><rect x="205" y="134" width="25" height="33"/>
+                  <rect x="115" y="184" width="25" height="33"/><rect x="160" y="184" width="25" height="33"/><rect x="205" y="184" width="25" height="33"/>
+                  <rect x="294" y="103" width="28" height="33"/><rect x="346" y="103" width="28" height="33"/><rect x="398" y="103" width="28" height="33"/><rect x="450" y="103" width="28" height="33"/>
+                  <rect x="294" y="155" width="28" height="33"/><rect x="346" y="155" width="28" height="33"/><rect x="398" y="155" width="28" height="33"/><rect x="450" y="155" width="28" height="33"/>
+                  <rect x="294" y="206" width="28" height="33"/><rect x="346" y="206" width="28" height="33"/><rect x="398" y="206" width="28" height="33"/><rect x="450" y="206" width="28" height="33"/>
+                </g>
+                <rect x="0" y="278" width="640" height="82" fill="#102437" opacity=".89"/>
+                <text x="28" y="319" font-size="25" font-family="system-ui,sans-serif" font-weight="700" fill="#e0faf8">FIRST PARAGON</text>
+                <text x="30" y="344" font-size="15" font-family="system-ui,sans-serif" fill="#9ddbd8">FORT COLLINS · MULTIFAMILY</text>
+              </svg>
+              <img src="assets/south-saint-verain-estes-park-co.jpg" alt="First Paragon Apartments in Fort Collins, Colorado" loading="lazy" onerror="this.style.display='none'">
+            </div>
+            <h3>First Paragon Apartments</h3>
+            <div class="asset-loc">Fort Collins, CO</div>
+            <div class="asset-meta"><span class="asset-tag">Active</span><span class="asset-tag">LP Investment</span><span class="asset-tag">Multifamily</span></div>
+            <p class="subtle">LP investment in a 16-building, 325-unit subsidized apartment community, with a passive-loss component. Acquired November 2018.</p>
+          </article>
+          <article class="card asset-card">
+            <img src="assets/portfolio-placeholder.jpg" alt="Generic image representing a San Diego residential investment" loading="lazy">
+            <h3>Mid-Rise Condo</h3>
+            <div class="asset-loc">Little Italy, San Diego, CA</div>
+            <div class="asset-meta"><span class="asset-tag">Active</span><span class="asset-tag">Principal Ownership</span><span class="asset-tag">Residential</span></div>
+            <p class="subtle">Personally owned and managed residential investment. Acquired July 2009.</p>
+          </article>
+          <article class="card asset-card">
+            <img src="assets/Arvada CO.jpg" alt="Single-family residential investment in Arvada, Colorado" loading="lazy">
+            <h3>Single-Family Home</h3>
+            <div class="asset-loc">Arvada, CO</div>
+            <div class="asset-meta"><span class="asset-tag">Active</span><span class="asset-tag">Principal Ownership</span><span class="asset-tag">Residential</span></div>
+            <p class="subtle">Personally owned and managed residential investment. Acquired September 2017.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section portfolio-section" id="realized">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="portfolio-eyebrow">Completed lifecycles</div>
+            <h2>Fully Realized Investments</h2>
+            <p class="subtle">Prior investments that have completed the acquisition-to-exit lifecycle.</p>
+          </div>
+        </div>
+        <div class="grid3 two-up asset-grid">
+          <article class="card asset-card">
+            <img src="assets/South Bend IN.jpg" alt="Commercial investment in South Bend, Indiana" loading="lazy">
+            <h3>Niles Colfax &mdash; Commercial Asset</h3>
+            <div class="asset-loc">South Bend, IN</div>
+            <div class="asset-meta"><span class="asset-tag">Fully Realized</span><span class="asset-tag">LP Investment</span><span class="asset-tag">Commercial</span></div>
+            <p class="subtle">Commercial LP investment acquired February 2015 and sold October 2024.</p>
+          </article>
+          <article class="card asset-card">
+            <img src="assets/idyllwild CA2.jpg" alt="Idyllic Idyllwild short-term rental cabin in California" loading="lazy">
+            <h3>Idyllic Idyllwild Cabin &mdash; Short-Term Rental</h3>
+            <div class="asset-loc">Idyllwild, CA</div>
+            <div class="asset-meta"><span class="asset-tag">Fully Realized</span><span class="asset-tag">Principal Ownership</span><span class="asset-tag">Residential</span></div>
+            <p class="subtle">Directly owned short-term rental investment acquired December 2015 and sold July 2020.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    </div><!-- /.portfolio-landscape-band -->
+
+    <!-- An open, unboxed area for future offerings and investor updates. -->
+    <section class="section portfolio-section" id="opportunities">
+      <div class="container">
+        <div class="opportunity-panel">
+          <div>
+            <div class="portfolio-eyebrow">Looking ahead</div>
+            <h2>Future Investment Opportunities</h2>
+            <p class="subtle">Sea to Summit Investments continues to evaluate multifamily opportunities that meet its investment criteria. This section will be expanded as appropriate when information about future investments is available. To stay connected and learn more about the firm's approach, join our investor contact list.</p>
+          </div>
+          <div class="opportunity-actions">
             <a class="btn primary" href="contact-v2.html">Join Investor List</a>
+            <span class="subtle">No current offering is being presented on this page.</span>
           </div>
         </div>
-
-        <!-- DESKTOP CTA -->
-        <div class="ctas">
-          <a class="btn primary" href="contact-v2.html">Join Investor List</a>
-        </div>
+        <p class="subtle portfolio-note">Portfolio reflects varied personal, partnership, and LP investment experiences; ownership and management roles differ by property. Some images may be illustrative. Nothing on this website constitutes an offer to sell or solicitation to buy any security; any future offering would be made only through applicable offering documents and in accordance with relevant law.</p>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
-<!-- PORTFOLIO: PHOTO BAND (wraps TITLE + SUMMARY in one continuous background) -->
-<section
-  class="section bg-photo"
-  style="--photo-url: url('assets/Portfolio-bg-photo.jpg'); --photo-pos: center;"
->
-  <div class="container">
-
-    <!-- TITLE (content block 1) -->
-    <div class="page-hero-grid">
-      <!-- LEFT: COPY -->
-      <div class="page-hero-copy">
-        <div class="kicker">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7z" stroke="currentColor" stroke-width="1.6"/>
-          </svg>
-          Residential • Commercial • Multifamily
-        </div>
-
-        <h1>Portfolio Snapshot</h1>
-
-        <p class="subtle">
-          Investment and management experience dating back to 2009, with five active cash-flowing assets and two fully realized investments
-          across residential, commercial, and multifamily real estate.
-        </p>
-
-        <p class="subtle disclaimer">
-          *This page is shared for informational purposes only and is not an offer to sell securities.
-        </p>
-
-        <div class="pillrow">
-          <a href="#active" class="tag">Active: 6 assets</a>
-          <a href="#realized" class="tag">Fully Realized: 2 assets</a>
-        </div>
-
-        <div class="hero-actions" style="margin-top:18px;">
-          <a class="btn" href="contact-v2.html">Ask a Question</a>
-          <a class="btn primary" href="contact-v2.html">Join Investor List</a>
-        </div>
-      </div>
-
-      <!-- RIGHT: IMAGE -->
-      <div class="page-hero-media">
-        <img src="assets/idyllwild CA.png" alt="Idyllwild cabin (short-term rental)">
-        <div class="media-caption">GP owned • Short-term rental • Idyllwild, CA</div>
-      </div>
-    </div>
-
-    <!-- Subtle divider inside the same background band -->
-    <div class="section-divider"></div>
-
-    <!-- SUMMARY (content block 2) -->
-    <h2>Summary</h2>
-
-    <div class="grid3" style="margin-top:14px;">
-      <div class="card">
-        <div class="icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M4 12h16M4 7h16M4 17h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>Residential - GP Ownership</h3>
-        <p>• Cabin (Short-Term Rental) - Idyllwild, CA</p>
-        <p>• Mid-Rise Condo - Little Italy, San Diego, CA</p>
-        <p>• Single-Family Home - Arvada, CO</p>
-        <p class="subtle">Owned &amp; managed by Sea to Summit Investments.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M3 21h18M6 21V7l6-4 6 4v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3>Commercial - LP Investment</h3>
-        <p>• Fully Realized - South Bend, IN</p>
-        <p>• Active, Cash-Flowing - Eastlake, OH</p>
-        <p class="subtle">Investments with cash distributions.</p>
-      </div>
-
-      <div class="card">
-        <div class="icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-            <path d="M4 10h16M6 10V6h12v4M6 10v10h12V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <h3>Multifamily - LP Investment</h3>
-        <p>• Park Crest Townhomes - Vancouver, WA</p>
-        <p>• West Main at the Park - Hillsboro, OR</p>
-        <p>• First Paragon Apartments - Ft. Collins, CO</p>
-        <p class="subtle">Investments with cash distributions or strategic passive losses.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-<section class="section" id="active">
-  <div class="container">
-    <h2 class="section-title">Active Investments</h2>
-
-      <p class="subtle">A high-level snapshot of currently held, cash-flowing assets.</p>
-
-      <div class="grid3 asset-grid">
-        <!-- Active Commercial -->
-        <div class="card asset-card">
-          <img src="assets/Eastlake OH.jpg" alt="Commercial investment property (placeholder)">
-          <h3>Curtis Blvd - Commercial Asset</h3>
-          <div class="asset-loc">Eastlake, OH</div>
-          <div class="asset-meta">
-            <span class="asset-tag">Active</span>
-            <span class="asset-tag">LP Investment</span>
-            <span class="asset-tag">Cash-Flowing</span>
-          </div>
-          <p class="subtle">Commercial Investment with ongoing distributions. Acquired in Nov. 2015.</p>
-        </div>
-
-        <!-- Active Multifamily 1 -->
-        <div class="card asset-card">
-          <img src="assets/Park Crest-WA.jpg" alt="Multifamily investment property (placeholder)">
-          <h3>Park Crest Townhomes</h3>
-          <div class="asset-loc">Vancouver, WA</div>
-          <div class="asset-meta">
-            <span class="asset-tag">Active</span>
-            <span class="asset-tag">LP Investment</span>
-            <span class="asset-tag">Multifamily</span>
-          </div>
-          <p class="subtle">Cash-flowing multifamily investment with ongoing distributions. Acquired Jul. 2021.</p>
-        </div>
-
-        <!-- Active Multifamily 2 -->
-        <div class="card asset-card">
-          <img src="assets/West Main-OR.jpg" alt="Multifamily investment property (placeholder)">
-          <h3>West Main at the Park</h3>
-          <div class="asset-loc">Hillsboro, OR</div>
-          <div class="asset-meta">
-            <span class="asset-tag">Active</span>
-            <span class="asset-tag">LP Investment</span>
-            <span class="asset-tag">Multifamily</span>
-          </div>
-          <p class="subtle">Cash-flowing multifamily investment with ongoing distributions. Acquired Dec. 2024.</p>
-        </div>
-
-        <!-- Active Multifamily 3 -->
-        <div class="card asset-card">
-          <img src="assets/south-saint-verain-estes-park-co.jpg" alt="Multifamily investment property (placeholder)">
-          <h3>First Paragon Investment</h3>
-          <div class="asset-loc">Ft. Collins, CO</div>
-          <div class="asset-meta">
-            <span class="asset-tag">Active</span>
-            <span class="asset-tag">LP Investment</span>
-            <span class="asset-tag">Subsidized Apartments</span>
-          </div>
-          <p class="subtle">16 Building, 325 unit, subsidized apartment investment providing strategic passive losses. Acquired Nov. 2018.</p>
-        </div>
-        
-        <!-- Active Residential 2 -->
-        <div class="card asset-card">
-          <img src="assets/portfolio-placeholder.jpg" alt="Mid-rise condo (placeholder)">
-          <h3>Mid-Rise Condo</h3>
-          <div class="asset-loc">Little Italy, San Diego, CA</div>
-          <div class="asset-meta">
-            <span class="asset-tag">Active</span>
-            <span class="asset-tag">GP Ownership</span>
-            <span class="asset-tag">Residential</span>
-          </div>
-          <p class="subtle">Sea to Summit owned and managed residential investment. Acquired Jul. 2009.</p>
-        </div>
-
-        <!-- Active Residential 3 -->
-        <div class="card asset-card">
-          <img src="assets/Arvada CO.jpg" alt="Single-family home (placeholder)">
-          <h3>Single-Family Home</h3>
-          <div class="asset-loc">Arvada, CO</div>
-          <div class="asset-meta">
-            <span class="asset-tag">Active</span>
-            <span class="asset-tag">GP Ownership</span>
-            <span class="asset-tag">Residential</span>
-          </div>
-          <p class="subtle">Sea to Summit owned and managed residential investment. Acquired Sept 2017.</p>
-        </div>
-      </div>
-    </div>
-<section class="section" id="realized">
-  <div class="container">
-    <h2 class="section-title">Fully Realized Investments</h2>
-      <p class="subtle">Completed investment lifecycles (entered and exited).</p>
-
-      <div class="grid3 two-up asset-grid">
-        <!-- Realized Commercial -->
-        <div class="card asset-card">
-          <img src="assets/South Bend IN.jpg" alt="Commercial investment property (placeholder)">
-          <h3>Niles Colfax - Commercial Asset</h3>
-          <div class="asset-loc">South Bend, IN</div>
-          <div class="asset-meta">
-            <span class="asset-tag">Fully Realized</span>
-            <span class="asset-tag">LP Investment</span>
-            <span class="asset-tag">Commercial</span>
-          </div>
-          <p class="subtle">Acquired in Feb. 2015 and sold in Oct. 2024. Fully realized commercial investment.</p>
-        </div>
-
-        <!-- Realized STR -->
-        <div class="card asset-card">
-          <img src="assets/idyllwild CA2.jpg" alt="Idyllic Idyllwild - Short-term rental property (placeholder)">
-          <h3>Idyllic Idyllwild Cabin - Short-Term Rental</h3>
-          <div class="asset-loc">Idyllwild, CA</div>
-          <div class="asset-meta">
-            <span class="asset-tag">Fully Realized</span>
-            <span class="asset-tag">GP Ownership</span>
-            <span class="asset-tag">Residential</span>
-          </div>
-          <p class="subtle">Acquired in Dec. 2015 and sold in Jul. 2020. Fully realized short-term rental investment.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <div>© <span id="year"></span> Sea to Summit Investments LLC. All rights reserved.</div>
-        <div>Stewardship • Transparency • Long-Term Alignment</div>
+        <div>&copy; <span id="year"></span> Sea to Summit Investments LLC. All rights reserved.</div>
+        <div>Stewardship &bull; Transparency &bull; Long-Term Alignment</div>
       </div>
     </div>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
