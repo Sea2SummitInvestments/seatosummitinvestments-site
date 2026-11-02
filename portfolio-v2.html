@@ -103,8 +103,8 @@
     .portfolio-page .portfolio-top-band .page-hero-copy { display:flex; flex-direction:column; justify-content:center; }
     .portfolio-page .portfolio-top-band .page-hero-copy > p:first-of-type { font-size:16px; line-height:1.7; }
 
-    /* Section navigation: obvious links, four even columns on desktop. */
-    .portfolio-page .portfolio-jumps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr));
+    /* Section navigation: three evenly balanced columns on desktop. */
+    .portfolio-page .portfolio-jumps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
       gap:10px; margin:24px 0 0; }
     .portfolio-page .portfolio-jumps a { display:flex; align-items:center; justify-content:space-between;
       gap:8px; min-width:0; min-height:60px; padding:13px 13px; border-radius:12px;
@@ -180,7 +180,7 @@
       .portfolio-page .acquisition-art .art-address { font-size:clamp(22px,6.3vw,29px); }
     }
     .portfolio-page [id="featured"], .portfolio-page [id="active"],
-    .portfolio-page [id="realized"], .portfolio-page [id="opportunities"] { scroll-margin-top:92px; }
+    .portfolio-page [id="realized"] { scroll-margin-top:92px; }
 
     /* OCTOBER FINAL PASS — all selectors are isolated to the Portfolio page. */
 
@@ -354,52 +354,36 @@
       .portfolio-page .portfolio-jumps .jump-kicker { font-size:9.5px; letter-spacing:.04em; }
       .portfolio-page .portfolio-jumps .jump-title { font-size:12px; }
     }
-
-    /* 1112 Orchard Street: proposed acquisition teaser, portfolio-specific. */
-    .portfolio-page #opportunities.orchard-opportunity-section { padding-top:66px; padding-bottom:75px; }
-    .portfolio-page #opportunities .orchard-heading { margin:0 0 25px; }
-    .portfolio-page #opportunities .orchard-heading h2 { margin:10px 0 8px; font-size:clamp(27px,2.8vw,38px); letter-spacing:-.045em; line-height:1.15; }
-    .portfolio-page #opportunities .orchard-heading .subtle { margin:0; max-width:65ch; font-size:15px; line-height:1.65; }
-    .portfolio-page #opportunities .orchard-feature { position:relative; display:grid; grid-template-columns:minmax(0,1.28fr) minmax(285px,.72fr); overflow:hidden; border:1px solid rgba(83,188,184,.32); border-radius:22px; background:linear-gradient(115deg,rgba(15,42,56,.94),rgba(15,33,49,.98) 65%,rgba(17,43,54,.98)); box-shadow:0 17px 50px rgba(0,0,0,.18); }
-    .portfolio-page #opportunities .orchard-feature::before { position:absolute; content:""; pointer-events:none; width:360px; height:360px; right:-175px; top:-220px; border-radius:50%; border:1px solid rgba(116,209,200,.13); box-shadow:0 0 0 55px rgba(116,209,200,.025),0 0 0 110px rgba(116,209,200,.018); }
-    .portfolio-page #opportunities .orchard-content { position:relative; padding:36px 40px 38px; }
-    .portfolio-page #opportunities .orchard-topline { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin:0 0 15px; }
-    .portfolio-page #opportunities .orchard-status { display:inline-flex; align-items:center; gap:8px; padding:6px 11px; border:1px solid rgba(116,209,200,.4); border-radius:999px; color:#a8e5dc; font-weight:700; font-size:11px; letter-spacing:.075em; text-transform:uppercase; }
-    .portfolio-page #opportunities .orchard-status::before { content:""; display:block; width:6px; height:6px; border-radius:50%; background:#71dcc8; }
-    .portfolio-page #opportunities .orchard-loc { color:#c7d4db; font-size:13px; letter-spacing:.01em; }
-    .portfolio-page #opportunities .orchard-name { font-size:clamp(30px,3.35vw,47px); line-height:1.1; letter-spacing:-.045em; color:#f2f8fa; margin:0 0 16px; font-weight:730; }
-    .portfolio-page #opportunities .orchard-description { color:#cad8df; line-height:1.75; font-size:15.5px; margin:0 0 27px; max-width:59ch; }
-    .portfolio-page #opportunities .orchard-facts { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
-    .portfolio-page #opportunities .orchard-fact { padding:13px 14px 12px; border:1px solid rgba(145,202,203,.19); border-radius:12px; background:rgba(255,255,255,.035); }
-    .portfolio-page #opportunities .orchard-fact strong { display:block; font-size:17px; line-height:1.15; color:#f4f8fa; font-weight:740; }
-    .portfolio-page #opportunities .orchard-fact span { display:block; color:#aec4ce; margin-top:6px; font-size:10.5px; line-height:1.3; letter-spacing:.06em; text-transform:uppercase; }
-    .portfolio-page #opportunities .orchard-contact { position:relative; min-width:0; display:flex; flex-direction:column; justify-content:center; gap:14px; padding:30px 32px; border-left:1px solid rgba(83,188,184,.21); background:linear-gradient(160deg,rgba(64,126,126,.13),rgba(8,26,40,.21)); }
-    .portfolio-page #opportunities .orchard-contact-kicker { color:#8ad2c8; font-size:11.5px; letter-spacing:.11em; font-weight:750; text-transform:uppercase; }
-    .portfolio-page #opportunities .orchard-contact h3 { font-size:clamp(21px,2.1vw,27px); margin:0; line-height:1.28; color:#f5fbfb; font-weight:710; letter-spacing:-.025em; }
-    .portfolio-page #opportunities .orchard-contact p { color:#c1d1d9; font-size:14px; line-height:1.7; margin:0 0 3px; }
-    .portfolio-page #opportunities .orchard-button { display:inline-flex; justify-content:center; align-items:center; gap:10px; border-radius:10px; padding:14px 17px; background:linear-gradient(120deg,#48c6b8,#56dac4); color:#092e38 !important; border:1px solid rgba(255,255,255,.28); text-decoration:none !important; font-weight:790; font-size:14.5px; line-height:1.25; min-height:47px; box-shadow:0 8px 25px rgba(6,20,25,.24); transition:transform .18s ease,filter .18s ease; }
-    .portfolio-page #opportunities .orchard-button:hover { transform:translateY(-2px); filter:brightness(1.06); }
-    .portfolio-page #opportunities .orchard-button:focus-visible { outline:3px solid #c3fff0; outline-offset:4px; }
-    .portfolio-page #opportunities .orchard-button svg { width:17px; height:17px; flex-shrink:0; }
-    .portfolio-page #opportunities .orchard-contact small { color:#a8c2ca; display:block; line-height:1.6; font-size:11.5px; }
-    .portfolio-page #opportunities .orchard-disclosure { margin:21px 0 0; color:#a8b9c6; font-size:11.5px; line-height:1.65; max-width:105ch; }
-    @media (max-width:900px) {
-      .portfolio-page #opportunities .orchard-feature { grid-template-columns:1fr; }
-      .portfolio-page #opportunities .orchard-contact { border-left:0; border-top:1px solid rgba(83,188,184,.21); }
+  
+    /* NOVEMBER 2026 — three-section portfolio, no public offerings block. */
+    .portfolio-page .portfolio-closing {
+      margin-top:46px; padding:24px 0 0; border-top:1px solid rgba(255,255,255,.16);
+      display:flex; justify-content:space-between; align-items:center; gap:24px;
     }
-    @media (max-width:600px) {
-      .portfolio-page #opportunities.orchard-opportunity-section { padding-top:48px; padding-bottom:48px; }
-      .portfolio-page #opportunities .orchard-heading h2 { font-size:30px; }
-      .portfolio-page #opportunities .orchard-content { padding:26px 22px; }
-      .portfolio-page #opportunities .orchard-contact { padding:27px 22px; }
-      .portfolio-page #opportunities .orchard-facts { grid-template-columns:1fr 1fr; }
-      .portfolio-page #opportunities .orchard-fact:last-child { grid-column:1 / -1; }
-      .portfolio-page #opportunities .orchard-description { font-size:14.5px; }
+    .portfolio-page .portfolio-closing .portfolio-eyebrow { margin-bottom:7px; }
+    .portfolio-page .portfolio-closing p { margin:0; max-width:590px; color:var(--muted,#aab8c9); line-height:1.6; }
+    .portfolio-page .portfolio-closing .btn { flex:0 0 auto; white-space:nowrap; }
+    .portfolio-page #realized .portfolio-note { margin-top:30px; font-size:12px; line-height:1.6; opacity:.78; }
+    @media(max-width:960px) {
+      .portfolio-page .portfolio-jumps { grid-template-columns:repeat(3,minmax(0,1fr)); }
     }
-    @media (prefers-reduced-motion:reduce) { .portfolio-page #opportunities .orchard-button { transition:none; } }
-
+    @media(max-width:700px) {
+      .portfolio-page .portfolio-jumps { grid-template-columns:1fr; }
+      .portfolio-page .portfolio-jumps a { min-height:62px; }
+      .portfolio-page .portfolio-closing { flex-direction:column; align-items:flex-start; gap:16px; margin-top:32px; }
+      .portfolio-page .portfolio-closing .btn { align-self:flex-start; }
+    }
   </style>
   <script src="nav.js" defer></script>
+  <!-- Preserve the #opportunities link already sent by email. URL fragments
+       are client-side; a Netlify redirect rule cannot match them. -->
+  <script>
+    (function () {
+      if (window.location.hash.toLowerCase() === '#opportunities') {
+        window.location.replace('/contact-v2.html');
+      }
+    }());
+  </script>
 </head>
 <body class="portfolio-page">
   <!-- Original site navigation retained -->
@@ -477,7 +461,6 @@
           <a href="#featured"><span class="jump-label"><span class="jump-kicker">New Acquisition</span><span class="jump-title">445 South E Street</span></span><span class="jump-arrow" aria-hidden="true">↗</span></a>
           <a href="#active"><span class="jump-label"><span class="jump-kicker">Current Holdings</span><span class="jump-title">7 Active Investments</span></span><span class="jump-arrow" aria-hidden="true">↗</span></a>
           <a href="#realized"><span class="jump-label"><span class="jump-kicker">Completed</span><span class="jump-title">2 Realized Investments</span></span><span class="jump-arrow" aria-hidden="true">↗</span></a>
-          <a href="#opportunities"><span class="jump-label"><span class="jump-kicker">Looking Ahead</span><span class="jump-title">Future Opportunities</span></span><span class="jump-arrow" aria-hidden="true">↗</span></a>
         </nav>
         <div class="section-divider"></div>
         <div class="section-heading">
@@ -667,48 +650,20 @@
             <p class="subtle">Directly owned short-term rental investment acquired December 2015 and sold July 2020.</p>
           </article>
         </div>
+
+        <!-- An understated, general contact invitation, not a securities offering. -->
+        <div class="portfolio-closing">
+          <div>
+            <div class="portfolio-eyebrow">Connect with us</div>
+            <p>Interested in learning more about Sea to Summit Investments and our experience? We'd be happy to connect.</p>
+          </div>
+          <a class="btn primary" href="contact-v2.html">Contact Our Team</a>
+        </div>
+        <p class="subtle portfolio-note">Portfolio reflects varied personal, partnership, and LP investment experiences; ownership and management roles differ by property. Some images may be illustrative. Nothing on this website constitutes an offer to sell or solicitation to buy any security; any future offering would be made only through applicable offering documents and in accordance with relevant law.</p>
       </div>
     </section>
 
     </div><!-- /.portfolio-landscape-band -->
-
-    <!-- Upcoming property highlight: 1112 Orchard Street. The CTA links to the hosted HubSpot form. -->
-    <section class="section portfolio-section orchard-opportunity-section" id="opportunities" aria-labelledby="orchard-section-title">
-      <div class="container">
-        <header class="orchard-heading">
-          <div class="portfolio-eyebrow">In the pipeline</div>
-          <h2 id="orchard-section-title">An Opportunity on the Horizon</h2>
-          <p class="subtle">We continue to identify and evaluate multifamily opportunities throughout Sonoma County.</p>
-        </header>
-
-        <article class="orchard-feature" aria-label="1112 Orchard Street potential acquisition">
-          <div class="orchard-content">
-            <div class="orchard-topline">
-              <span class="orchard-status">Under evaluation</span>
-              <span class="orchard-loc">Santa Rosa, California</span>
-            </div>
-            <h3 class="orchard-name">1112 Orchard Street</h3>
-            <p class="orchard-description">A 16-residence townhome-style community near Santa Rosa's Junior College neighborhood. We're evaluating a potential acquisition with an emphasis on disciplined underwriting, targeted improvements, and long-term property stewardship.</p>
-            <div class="orchard-facts" aria-label="Property overview">
-              <div class="orchard-fact"><strong>16</strong><span>Residences</span></div>
-              <div class="orchard-fact"><strong>2 BD / 1.5 BA</strong><span>Townhome units</span></div>
-              <div class="orchard-fact"><strong>Santa Rosa</strong><span>Sonoma County, CA</span></div>
-            </div>
-          </div>
-          <div class="orchard-contact">
-            <div class="orchard-contact-kicker">Stay connected</div>
-            <h3>Interested in future updates?</h3>
-            <p>Share your interest through our short form, and we'll be in touch as more information becomes available.</p>
-            <a class="orchard-button" href="https://sr7ta.share-na2.hsforms.com/2Y6kiMJDxSOGLSgc81W5kHQ" target="_blank" rel="noopener noreferrer" aria-label="Request updates about 1112 Orchard Street through our HubSpot form">
-              Request Updates
-              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
-            </a>
-            <small>The form opens in a new tab. No investment commitment is required.</small>
-          </div>
-        </article>
-        <p class="orchard-disclosure">Potential acquisition only; property status, structure, and timing are subject to change. This information is preliminary, is not an offer to sell or a solicitation to buy securities, and does not guarantee that an investment opportunity will be available. Any offering, if undertaken, would be made only through applicable offering documents and in accordance with relevant law.</p>
-      </div>
-    </section>
 
   </main>
 
