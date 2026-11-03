@@ -32,7 +32,6 @@
     .portfolio-page .acquisition-art .art-overline { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.17em; color:#9ddbd8; }
     .portfolio-page .acquisition-art .art-address { font-size:clamp(30px,3.8vw,49px); line-height:1.02; letter-spacing:-.035em; font-weight:800; margin:0 0 8px; }
     .portfolio-page .acquisition-art .art-detail { color:#c9dce5; font-size:14px; }
-    .portfolio-page .acquisition-art .art-building { display:block; width:100%; max-height:170px; margin:12px 0 20px; opacity:.9; }
     .portfolio-page .portfolio-section { padding-top:57px; padding-bottom:54px; }
     .portfolio-page .section-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:15px; flex-wrap:wrap; margin-bottom:18px; }
     .portfolio-page .section-heading h2 { margin:5px 0 0; }
@@ -121,7 +120,7 @@
       color:#88d5d0; text-transform:uppercase; margin-bottom:4px; }
 
     /* Feature visual can immediately display an actual building photo.
-       Save it as assets/445-south-e-street.jpg. Until then, the gradient is intentional. */
+       The real image loads from assets/445-south-e-street.jpg, with a legibility gradient. */
     .portfolio-page .acquisition-art { background:
        linear-gradient(180deg,rgba(10,28,42,.12) 0%,rgba(9,22,35,.32) 42%,rgba(7,20,34,.91) 100%),
        url('assets/445-south-e-street.jpg') center/cover no-repeat,
@@ -133,8 +132,6 @@
       line-height:1.18; white-space:nowrap; margin:0 0 7px; }
     .portfolio-page .acquisition-art .art-detail { font-size:13px; line-height:1.55; }
     .portfolio-page .acquisition-art .art-overline { font-size:10px; line-height:1.5; }
-    .portfolio-page .acquisition-art .art-building { width:min(88%,310px); height:120px;
-      margin:auto; opacity:.48; filter:drop-shadow(0 6px 24px rgba(0,0,0,.35)); }
 
     /* Calm, intentional section rhythm instead of repeating the standard fade. */
     .portfolio-page #featured::before { background:linear-gradient(130deg,#0e1b2c 0%,#11273a 65%,#10202f 100%); }
@@ -155,7 +152,7 @@
     .portfolio-page .portfolio-top-band .section-divider { margin:38px 0; }
 
     /* Paragon receives its own distinct image reference; the branded illustration
-       remains visible until assets/first-paragon-apartments.jpg is supplied. */
+       acts as fallback if assets/first-paragon-apartments.png is unavailable. */
     .portfolio-page .paragon-visual { position:relative; display:block; overflow:hidden;
       width:100%; aspect-ratio:16/9; margin-bottom:12px; border-radius:14px;
       border:1px solid rgba(255,255,255,.16); background:linear-gradient(125deg,#193b4a,#214957 55%,#14293b); }
@@ -441,15 +438,8 @@
             <p class="subtle disclaimer">Portfolio includes investments held through different entities and partnerships, with varying ownership and management roles. Information is for general background only and is not an offer to sell securities.</p>
           </div>
           <div class="page-hero-media">
-            <div class="acquisition-art" role="img" aria-label="Graphic celebrating the acquisition of 445 South E Street, a 19-unit apartment property in Santa Rosa, California">
+            <div class="acquisition-art" role="img" aria-label="Photo of 445 South E Street, a 19-unit apartment property in Santa Rosa, California">
               <div class="art-overline">Recent multifamily acquisition &bull; September 2026</div>
-              <svg class="art-building" viewBox="0 0 460 185" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M16 160H444" stroke="#82cfc9" stroke-width="1.5" opacity=".65"/>
-                <path d="M32 160V75L92 37H225V160M225 160V59L285 27H419V160" stroke="#82cfc9" stroke-width="2.2" opacity=".85" stroke-linejoin="round"/>
-                <path d="M40 75H225M230 59H418M92 37V160M285 27V160" stroke="#82cfc9" stroke-width="1.2" opacity=".40"/>
-                <path d="M58 93H78V119H58V93ZM107 93H127V119H107V93ZM155 93H175V119H155V93ZM58 133H78V153H58V133ZM107 133H127V153H107V133ZM155 133H175V153H155V133ZM247 78H270V105H247V78ZM298 78H321V105H298V78ZM349 78H372V105H349V78ZM247 120H270V147H247V120ZM298 120H321V147H298V120ZM349 120H372V147H349V120Z" stroke="#7bd2cb" stroke-width="1.5" opacity=".7"/>
-                <path d="M20 166H440" stroke="#c6f2ed" stroke-width="1" opacity=".33"/>
-              </svg>
               <div>
                 <h2 class="art-address">445 South E St.</h2>
                 <div class="art-detail">19 apartments &nbsp;&bull;&nbsp; Santa Rosa, California</div>
@@ -600,7 +590,7 @@
                 <text x="28" y="319" font-size="25" font-family="system-ui,sans-serif" font-weight="700" fill="#e0faf8">FIRST PARAGON</text>
                 <text x="30" y="344" font-size="15" font-family="system-ui,sans-serif" fill="#9ddbd8">FORT COLLINS · MULTIFAMILY</text>
               </svg>
-              <img src="assets/first-paragon-apartments.jpg" alt="First Paragon Apartments in Fort Collins, Colorado" loading="lazy" onerror="this.style.display='none'">
+              <img src="assets/first-paragon-apartments.png" alt="First Paragon Apartments in Fort Collins, Colorado" loading="lazy" onerror="this.style.display='none'">
             </div>
             <h3>First Paragon Apartments</h3>
             <div class="asset-loc">Fort Collins, CO</div>
